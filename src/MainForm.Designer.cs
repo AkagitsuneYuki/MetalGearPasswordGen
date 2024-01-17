@@ -30,15 +30,41 @@
         {
             this.DataTabs = new System.Windows.Forms.TabControl();
             this.ItemsTab = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.WeaponsBox = new System.Windows.Forms.GroupBox();
+            this.RankBox = new System.Windows.Forms.GroupBox();
             this.Rank1Button = new System.Windows.Forms.RadioButton();
+            this.Rank4Button = new System.Windows.Forms.RadioButton();
             this.Rank2Button = new System.Windows.Forms.RadioButton();
             this.Rank3Button = new System.Windows.Forms.RadioButton();
-            this.Rank4Button = new System.Windows.Forms.RadioButton();
-            this.RankBox = new System.Windows.Forms.GroupBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.HandGunBox = new System.Windows.Forms.CheckBox();
+            this.HandGunRoundsBox = new System.Windows.Forms.NumericUpDown();
+            this.MinesBox = new System.Windows.Forms.CheckBox();
+            this.ExplosivesBox = new System.Windows.Forms.CheckBox();
+            this.MissilesBox = new System.Windows.Forms.CheckBox();
+            this.MachineGunBox = new System.Windows.Forms.CheckBox();
+            this.GrenadeBox = new System.Windows.Forms.CheckBox();
+            this.RocketBox = new System.Windows.Forms.CheckBox();
+            this.SilencerBox = new System.Windows.Forms.CheckBox();
+            this.MinesCountBox = new System.Windows.Forms.NumericUpDown();
+            this.ExplosivesCountBox = new System.Windows.Forms.NumericUpDown();
+            this.MissilesCountBox = new System.Windows.Forms.NumericUpDown();
+            this.MachineGunCountBox = new System.Windows.Forms.NumericUpDown();
+            this.GrenadeCountBox = new System.Windows.Forms.NumericUpDown();
+            this.RocketCountBox = new System.Windows.Forms.NumericUpDown();
+            this.WeaponLabel = new System.Windows.Forms.Label();
+            this.AmmoCountLabel = new System.Windows.Forms.Label();
             this.DataTabs.SuspendLayout();
             this.ItemsTab.SuspendLayout();
+            this.WeaponsBox.SuspendLayout();
             this.RankBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.HandGunRoundsBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MinesCountBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ExplosivesCountBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MissilesCountBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MachineGunCountBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GrenadeCountBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RocketCountBox)).BeginInit();
             this.SuspendLayout();
             // 
             // DataTabs
@@ -49,71 +75,49 @@
             this.DataTabs.Margin = new System.Windows.Forms.Padding(0);
             this.DataTabs.Name = "DataTabs";
             this.DataTabs.SelectedIndex = 0;
-            this.DataTabs.Size = new System.Drawing.Size(420, 420);
+            this.DataTabs.Size = new System.Drawing.Size(315, 341);
             this.DataTabs.TabIndex = 0;
             // 
             // ItemsTab
             // 
+            this.ItemsTab.Controls.Add(this.WeaponsBox);
             this.ItemsTab.Controls.Add(this.RankBox);
-            this.ItemsTab.Location = new System.Drawing.Point(4, 25);
+            this.ItemsTab.Location = new System.Drawing.Point(4, 22);
+            this.ItemsTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ItemsTab.Name = "ItemsTab";
-            this.ItemsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.ItemsTab.Size = new System.Drawing.Size(412, 391);
+            this.ItemsTab.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ItemsTab.Size = new System.Drawing.Size(307, 315);
             this.ItemsTab.TabIndex = 0;
             this.ItemsTab.Text = "Snake";
             this.ItemsTab.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // WeaponsBox
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(412, 391);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // Rank1Button
-            // 
-            this.Rank1Button.AutoSize = true;
-            this.Rank1Button.Checked = true;
-            this.Rank1Button.Location = new System.Drawing.Point(6, 21);
-            this.Rank1Button.Name = "Rank1Button";
-            this.Rank1Button.Size = new System.Drawing.Size(33, 20);
-            this.Rank1Button.TabIndex = 0;
-            this.Rank1Button.TabStop = true;
-            this.Rank1Button.Text = "*";
-            this.Rank1Button.UseVisualStyleBackColor = true;
-            // 
-            // Rank2Button
-            // 
-            this.Rank2Button.AutoSize = true;
-            this.Rank2Button.Location = new System.Drawing.Point(6, 48);
-            this.Rank2Button.Name = "Rank2Button";
-            this.Rank2Button.Size = new System.Drawing.Size(38, 20);
-            this.Rank2Button.TabIndex = 1;
-            this.Rank2Button.Text = "**";
-            this.Rank2Button.UseVisualStyleBackColor = true;
-            // 
-            // Rank3Button
-            // 
-            this.Rank3Button.AutoSize = true;
-            this.Rank3Button.Location = new System.Drawing.Point(6, 75);
-            this.Rank3Button.Name = "Rank3Button";
-            this.Rank3Button.Size = new System.Drawing.Size(43, 20);
-            this.Rank3Button.TabIndex = 2;
-            this.Rank3Button.Text = "***";
-            this.Rank3Button.UseVisualStyleBackColor = true;
-            // 
-            // Rank4Button
-            // 
-            this.Rank4Button.AutoSize = true;
-            this.Rank4Button.Location = new System.Drawing.Point(6, 102);
-            this.Rank4Button.Name = "Rank4Button";
-            this.Rank4Button.Size = new System.Drawing.Size(48, 20);
-            this.Rank4Button.TabIndex = 3;
-            this.Rank4Button.Text = "****";
-            this.Rank4Button.UseVisualStyleBackColor = true;
+            this.WeaponsBox.Controls.Add(this.AmmoCountLabel);
+            this.WeaponsBox.Controls.Add(this.WeaponLabel);
+            this.WeaponsBox.Controls.Add(this.RocketCountBox);
+            this.WeaponsBox.Controls.Add(this.GrenadeCountBox);
+            this.WeaponsBox.Controls.Add(this.MachineGunCountBox);
+            this.WeaponsBox.Controls.Add(this.MissilesCountBox);
+            this.WeaponsBox.Controls.Add(this.ExplosivesCountBox);
+            this.WeaponsBox.Controls.Add(this.MinesCountBox);
+            this.WeaponsBox.Controls.Add(this.SilencerBox);
+            this.WeaponsBox.Controls.Add(this.RocketBox);
+            this.WeaponsBox.Controls.Add(this.GrenadeBox);
+            this.WeaponsBox.Controls.Add(this.MachineGunBox);
+            this.WeaponsBox.Controls.Add(this.MissilesBox);
+            this.WeaponsBox.Controls.Add(this.ExplosivesBox);
+            this.WeaponsBox.Controls.Add(this.MinesBox);
+            this.WeaponsBox.Controls.Add(this.HandGunRoundsBox);
+            this.WeaponsBox.Controls.Add(this.HandGunBox);
+            this.WeaponsBox.Location = new System.Drawing.Point(62, 5);
+            this.WeaponsBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.WeaponsBox.Name = "WeaponsBox";
+            this.WeaponsBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.WeaponsBox.Size = new System.Drawing.Size(166, 215);
+            this.WeaponsBox.TabIndex = 5;
+            this.WeaponsBox.TabStop = false;
+            this.WeaponsBox.Text = "Weapons";
             // 
             // RankBox
             // 
@@ -121,26 +125,322 @@
             this.RankBox.Controls.Add(this.Rank4Button);
             this.RankBox.Controls.Add(this.Rank2Button);
             this.RankBox.Controls.Add(this.Rank3Button);
-            this.RankBox.Location = new System.Drawing.Point(8, 6);
+            this.RankBox.Location = new System.Drawing.Point(6, 5);
+            this.RankBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.RankBox.Name = "RankBox";
-            this.RankBox.Size = new System.Drawing.Size(70, 132);
+            this.RankBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RankBox.Size = new System.Drawing.Size(52, 107);
             this.RankBox.TabIndex = 4;
             this.RankBox.TabStop = false;
             this.RankBox.Text = "Rank";
             // 
+            // Rank1Button
+            // 
+            this.Rank1Button.AutoSize = true;
+            this.Rank1Button.Checked = true;
+            this.Rank1Button.Location = new System.Drawing.Point(4, 17);
+            this.Rank1Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Rank1Button.Name = "Rank1Button";
+            this.Rank1Button.Size = new System.Drawing.Size(29, 17);
+            this.Rank1Button.TabIndex = 0;
+            this.Rank1Button.TabStop = true;
+            this.Rank1Button.Text = "*";
+            this.Rank1Button.UseVisualStyleBackColor = true;
+            // 
+            // Rank4Button
+            // 
+            this.Rank4Button.AutoSize = true;
+            this.Rank4Button.Location = new System.Drawing.Point(4, 83);
+            this.Rank4Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Rank4Button.Name = "Rank4Button";
+            this.Rank4Button.Size = new System.Drawing.Size(41, 17);
+            this.Rank4Button.TabIndex = 3;
+            this.Rank4Button.Text = "****";
+            this.Rank4Button.UseVisualStyleBackColor = true;
+            // 
+            // Rank2Button
+            // 
+            this.Rank2Button.AutoSize = true;
+            this.Rank2Button.Location = new System.Drawing.Point(4, 39);
+            this.Rank2Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Rank2Button.Name = "Rank2Button";
+            this.Rank2Button.Size = new System.Drawing.Size(33, 17);
+            this.Rank2Button.TabIndex = 1;
+            this.Rank2Button.Text = "**";
+            this.Rank2Button.UseVisualStyleBackColor = true;
+            // 
+            // Rank3Button
+            // 
+            this.Rank3Button.AutoSize = true;
+            this.Rank3Button.Location = new System.Drawing.Point(4, 61);
+            this.Rank3Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Rank3Button.Name = "Rank3Button";
+            this.Rank3Button.Size = new System.Drawing.Size(37, 17);
+            this.Rank3Button.TabIndex = 2;
+            this.Rank3Button.Text = "***";
+            this.Rank3Button.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Size = new System.Drawing.Size(307, 315);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // HandGunBox
+            // 
+            this.HandGunBox.AutoSize = true;
+            this.HandGunBox.Location = new System.Drawing.Point(5, 31);
+            this.HandGunBox.Name = "HandGunBox";
+            this.HandGunBox.Size = new System.Drawing.Size(75, 17);
+            this.HandGunBox.TabIndex = 3;
+            this.HandGunBox.Text = "Hand Gun";
+            this.HandGunBox.UseVisualStyleBackColor = true;
+            // 
+            // HandGunRoundsBox
+            // 
+            this.HandGunRoundsBox.Location = new System.Drawing.Point(115, 30);
+            this.HandGunRoundsBox.Margin = new System.Windows.Forms.Padding(2);
+            this.HandGunRoundsBox.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.HandGunRoundsBox.Name = "HandGunRoundsBox";
+            this.HandGunRoundsBox.Size = new System.Drawing.Size(40, 20);
+            this.HandGunRoundsBox.TabIndex = 4;
+            this.HandGunRoundsBox.Value = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            // 
+            // MinesBox
+            // 
+            this.MinesBox.AutoSize = true;
+            this.MinesBox.Location = new System.Drawing.Point(5, 54);
+            this.MinesBox.Name = "MinesBox";
+            this.MinesBox.Size = new System.Drawing.Size(54, 17);
+            this.MinesBox.TabIndex = 5;
+            this.MinesBox.Text = "Mines";
+            this.MinesBox.UseVisualStyleBackColor = true;
+            // 
+            // ExplosivesBox
+            // 
+            this.ExplosivesBox.AutoSize = true;
+            this.ExplosivesBox.Location = new System.Drawing.Point(5, 77);
+            this.ExplosivesBox.Name = "ExplosivesBox";
+            this.ExplosivesBox.Size = new System.Drawing.Size(76, 17);
+            this.ExplosivesBox.TabIndex = 6;
+            this.ExplosivesBox.Text = "Explosives";
+            this.ExplosivesBox.UseVisualStyleBackColor = true;
+            // 
+            // MissilesBox
+            // 
+            this.MissilesBox.AutoSize = true;
+            this.MissilesBox.Location = new System.Drawing.Point(5, 100);
+            this.MissilesBox.Name = "MissilesBox";
+            this.MissilesBox.Size = new System.Drawing.Size(62, 17);
+            this.MissilesBox.TabIndex = 7;
+            this.MissilesBox.Text = "Missiles";
+            this.MissilesBox.UseVisualStyleBackColor = true;
+            // 
+            // MachineGunBox
+            // 
+            this.MachineGunBox.AutoSize = true;
+            this.MachineGunBox.Location = new System.Drawing.Point(5, 123);
+            this.MachineGunBox.Name = "MachineGunBox";
+            this.MachineGunBox.Size = new System.Drawing.Size(90, 17);
+            this.MachineGunBox.TabIndex = 8;
+            this.MachineGunBox.Text = "Machine Gun";
+            this.MachineGunBox.UseVisualStyleBackColor = true;
+            // 
+            // GrenadeBox
+            // 
+            this.GrenadeBox.AutoSize = true;
+            this.GrenadeBox.Location = new System.Drawing.Point(5, 146);
+            this.GrenadeBox.Name = "GrenadeBox";
+            this.GrenadeBox.Size = new System.Drawing.Size(115, 17);
+            this.GrenadeBox.TabIndex = 9;
+            this.GrenadeBox.Text = "Grenade Launcher";
+            this.GrenadeBox.UseVisualStyleBackColor = true;
+            // 
+            // RocketBox
+            // 
+            this.RocketBox.AutoSize = true;
+            this.RocketBox.Location = new System.Drawing.Point(5, 169);
+            this.RocketBox.Name = "RocketBox";
+            this.RocketBox.Size = new System.Drawing.Size(109, 17);
+            this.RocketBox.TabIndex = 10;
+            this.RocketBox.Text = "Rocket Launcher";
+            this.RocketBox.UseVisualStyleBackColor = true;
+            // 
+            // SilencerBox
+            // 
+            this.SilencerBox.AutoSize = true;
+            this.SilencerBox.Location = new System.Drawing.Point(5, 192);
+            this.SilencerBox.Name = "SilencerBox";
+            this.SilencerBox.Size = new System.Drawing.Size(64, 17);
+            this.SilencerBox.TabIndex = 11;
+            this.SilencerBox.Text = "Silencer";
+            this.SilencerBox.UseVisualStyleBackColor = true;
+            // 
+            // MinesCountBox
+            // 
+            this.MinesCountBox.Location = new System.Drawing.Point(115, 53);
+            this.MinesCountBox.Margin = new System.Windows.Forms.Padding(2);
+            this.MinesCountBox.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.MinesCountBox.Name = "MinesCountBox";
+            this.MinesCountBox.Size = new System.Drawing.Size(40, 20);
+            this.MinesCountBox.TabIndex = 12;
+            this.MinesCountBox.Value = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            // 
+            // ExplosivesCountBox
+            // 
+            this.ExplosivesCountBox.Location = new System.Drawing.Point(115, 77);
+            this.ExplosivesCountBox.Margin = new System.Windows.Forms.Padding(2);
+            this.ExplosivesCountBox.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.ExplosivesCountBox.Name = "ExplosivesCountBox";
+            this.ExplosivesCountBox.Size = new System.Drawing.Size(40, 20);
+            this.ExplosivesCountBox.TabIndex = 13;
+            this.ExplosivesCountBox.Value = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            // 
+            // MissilesCountBox
+            // 
+            this.MissilesCountBox.Location = new System.Drawing.Point(115, 99);
+            this.MissilesCountBox.Margin = new System.Windows.Forms.Padding(2);
+            this.MissilesCountBox.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.MissilesCountBox.Name = "MissilesCountBox";
+            this.MissilesCountBox.Size = new System.Drawing.Size(40, 20);
+            this.MissilesCountBox.TabIndex = 14;
+            this.MissilesCountBox.Value = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            // 
+            // MachineGunCountBox
+            // 
+            this.MachineGunCountBox.Location = new System.Drawing.Point(115, 123);
+            this.MachineGunCountBox.Margin = new System.Windows.Forms.Padding(2);
+            this.MachineGunCountBox.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.MachineGunCountBox.Name = "MachineGunCountBox";
+            this.MachineGunCountBox.Size = new System.Drawing.Size(40, 20);
+            this.MachineGunCountBox.TabIndex = 15;
+            this.MachineGunCountBox.Value = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            // 
+            // GrenadeCountBox
+            // 
+            this.GrenadeCountBox.Location = new System.Drawing.Point(115, 145);
+            this.GrenadeCountBox.Margin = new System.Windows.Forms.Padding(2);
+            this.GrenadeCountBox.Maximum = new decimal(new int[] {
+            90,
+            0,
+            0,
+            0});
+            this.GrenadeCountBox.Name = "GrenadeCountBox";
+            this.GrenadeCountBox.Size = new System.Drawing.Size(40, 20);
+            this.GrenadeCountBox.TabIndex = 16;
+            this.GrenadeCountBox.Value = new decimal(new int[] {
+            90,
+            0,
+            0,
+            0});
+            // 
+            // RocketCountBox
+            // 
+            this.RocketCountBox.Location = new System.Drawing.Point(115, 169);
+            this.RocketCountBox.Margin = new System.Windows.Forms.Padding(2);
+            this.RocketCountBox.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.RocketCountBox.Name = "RocketCountBox";
+            this.RocketCountBox.Size = new System.Drawing.Size(40, 20);
+            this.RocketCountBox.TabIndex = 17;
+            this.RocketCountBox.Value = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            // 
+            // WeaponLabel
+            // 
+            this.WeaponLabel.AutoSize = true;
+            this.WeaponLabel.Location = new System.Drawing.Point(21, 15);
+            this.WeaponLabel.Name = "WeaponLabel";
+            this.WeaponLabel.Size = new System.Drawing.Size(48, 13);
+            this.WeaponLabel.TabIndex = 18;
+            this.WeaponLabel.Text = "Weapon";
+            this.WeaponLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // AmmoCountLabel
+            // 
+            this.AmmoCountLabel.AutoSize = true;
+            this.AmmoCountLabel.Location = new System.Drawing.Point(117, 15);
+            this.AmmoCountLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.AmmoCountLabel.Name = "AmmoCountLabel";
+            this.AmmoCountLabel.Size = new System.Drawing.Size(36, 13);
+            this.AmmoCountLabel.TabIndex = 19;
+            this.AmmoCountLabel.Text = "Ammo";
+            this.AmmoCountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.DataTabs);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MainForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.LoadMainForm);
             this.DataTabs.ResumeLayout(false);
             this.ItemsTab.ResumeLayout(false);
+            this.WeaponsBox.ResumeLayout(false);
+            this.WeaponsBox.PerformLayout();
             this.RankBox.ResumeLayout(false);
             this.RankBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.HandGunRoundsBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MinesCountBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ExplosivesCountBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MissilesCountBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MachineGunCountBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GrenadeCountBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RocketCountBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -155,6 +455,24 @@
         private System.Windows.Forms.RadioButton Rank2Button;
         private System.Windows.Forms.RadioButton Rank1Button;
         private System.Windows.Forms.GroupBox RankBox;
+        private System.Windows.Forms.GroupBox WeaponsBox;
+        private System.Windows.Forms.NumericUpDown HandGunRoundsBox;
+        private System.Windows.Forms.CheckBox HandGunBox;
+        private System.Windows.Forms.Label AmmoCountLabel;
+        private System.Windows.Forms.Label WeaponLabel;
+        private System.Windows.Forms.NumericUpDown RocketCountBox;
+        private System.Windows.Forms.NumericUpDown GrenadeCountBox;
+        private System.Windows.Forms.NumericUpDown MachineGunCountBox;
+        private System.Windows.Forms.NumericUpDown MissilesCountBox;
+        private System.Windows.Forms.NumericUpDown ExplosivesCountBox;
+        private System.Windows.Forms.NumericUpDown MinesCountBox;
+        private System.Windows.Forms.CheckBox SilencerBox;
+        private System.Windows.Forms.CheckBox RocketBox;
+        private System.Windows.Forms.CheckBox GrenadeBox;
+        private System.Windows.Forms.CheckBox MachineGunBox;
+        private System.Windows.Forms.CheckBox MissilesBox;
+        private System.Windows.Forms.CheckBox ExplosivesBox;
+        private System.Windows.Forms.CheckBox MinesBox;
     }
 }
 

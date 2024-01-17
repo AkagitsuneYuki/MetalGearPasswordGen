@@ -8,7 +8,11 @@ namespace MGPG
 {
     internal class Password
     {
-
+        //Snake's rank, must be 1, 2, 3, or 4, else the code is invalid
+        private int rank;
+        public int Rank { 
+            get { return rank; }
+        }
 
 
 #region Character Conversion

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MGPG", "MGPG.csproj", "{6AA7D54C-A214-46D7-896B-4D81B0BE0368}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6AA7D54C-A214-46D7-896B-4D81B0BE0368}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AA7D54C-A214-46D7-896B-4D81B0BE0368}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AA7D54C-A214-46D7-896B-4D81B0BE0368}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AA7D54C-A214-46D7-896B-4D81B0BE0368}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8264F516-B5FA-483C-AB84-D42E416B1F00}
+	EndGlobalSection
+EndGlobal

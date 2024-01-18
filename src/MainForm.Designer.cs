@@ -450,6 +450,7 @@ namespace MGPG
             // EquipmentCheckListA
             // 
             this.EquipmentCheckListA.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.EquipmentCheckListA.CheckOnClick = true;
             this.EquipmentCheckListA.FormattingEnabled = true;
             this.EquipmentCheckListA.Items.AddRange(new object[] {
             "Card1",
@@ -465,10 +466,12 @@ namespace MGPG
             this.EquipmentCheckListA.Name = "EquipmentCheckListA";
             this.EquipmentCheckListA.Size = new System.Drawing.Size(76, 135);
             this.EquipmentCheckListA.TabIndex = 0;
+            this.EquipmentCheckListA.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.EquipmentCheckListA_ItemCheck);
             // 
             // EquipmentCheckListB
             // 
             this.EquipmentCheckListB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.EquipmentCheckListB.CheckOnClick = true;
             this.EquipmentCheckListB.FormattingEnabled = true;
             this.EquipmentCheckListB.Items.AddRange(new object[] {
             "Gasmask",
@@ -488,6 +491,7 @@ namespace MGPG
             // EquipmentCheckListC
             // 
             this.EquipmentCheckListC.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.EquipmentCheckListC.CheckOnClick = true;
             this.EquipmentCheckListC.FormattingEnabled = true;
             this.EquipmentCheckListC.Items.AddRange(new object[] {
             "Antenna",

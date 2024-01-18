@@ -19,32 +19,32 @@ namespace MGPG
         #region Equipment
         public struct Equipment
         {
-            bool card1;
-            bool card2;
-            bool card3;
-            bool card4;
-            bool card5;
-            bool card6;
-            bool card7;
-            bool card8;
-            bool cigarettes;
-            bool gasmask;
-            bool binoculars;
-            bool cardboard;
-            bool bbSuit;
-            bool uniform;
-            bool googles;
-            bool glove;
-            bool detector;
-            bool armor;
-            bool antenna;
-            bool antidote;
-            bool light;
-            bool compass;
-            bool oxygen;
-            bool transmitter;
-            bool ration;
-            int rations;
+            public bool card1;
+            public bool card2;
+            public bool card3;
+            public bool card4;
+            public bool card5;
+            public bool card6;
+            public bool card7;
+            public bool card8;
+            public bool cigarettes;
+            public bool gasmask;
+            public bool binoculars;
+            public bool cardboard;
+            public bool bbSuit;
+            public bool uniform;
+            public bool googles;
+            public bool glove;
+            public bool detector;
+            public bool armor;
+            public bool antenna;
+            public bool antidote;
+            public bool light;
+            public bool compass;
+            public bool oxygen;
+            public bool transmitter;
+            public bool ration;
+            public int rations;
         }
         
         public Equipment equipment;

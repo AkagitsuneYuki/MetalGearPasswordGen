@@ -685,10 +685,13 @@ namespace MGPG
             // 
             // PasswordTextBox
             // 
+            this.PasswordTextBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.PasswordTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.PasswordTextBox.Font = new System.Drawing.Font("Lucida Console", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PasswordTextBox.Location = new System.Drawing.Point(181, 268);
             this.PasswordTextBox.Multiline = true;
             this.PasswordTextBox.Name = "PasswordTextBox";
+            this.PasswordTextBox.ReadOnly = true;
             this.PasswordTextBox.Size = new System.Drawing.Size(140, 78);
             this.PasswordTextBox.TabIndex = 1;
             this.PasswordTextBox.Text = "FUCKM E1111 11111 11111 11111";

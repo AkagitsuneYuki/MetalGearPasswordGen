@@ -13,8 +13,44 @@ namespace MGPG
         {
             rank = 1;
             weapons = new Weapon[8];
+            equipment = new Equipment();
         }
 
+        #region Equipment
+        public struct Equipment
+        {
+            bool card1;
+            bool card2;
+            bool card3;
+            bool card4;
+            bool card5;
+            bool card6;
+            bool card7;
+            bool card8;
+            bool cigarettes;
+            bool gasmask;
+            bool binoculars;
+            bool cardboard;
+            bool bbSuit;
+            bool uniform;
+            bool googles;
+            bool glove;
+            bool detector;
+            bool armor;
+            bool antenna;
+            bool antidote;
+            bool light;
+            bool compass;
+            bool oxygen;
+            bool transmitter;
+            bool ration;
+            int rations;
+        }
+        
+        public Equipment equipment;
+        #endregion
+
+        #region Weapons
         public enum WeaponID
         {
             HandGun,
@@ -27,20 +63,13 @@ namespace MGPG
             Silencer
         }
 
-        struct Weapon
+        public struct Weapon
         {
             public bool obtained;
             public int ammoCount;
         }
 
-        private Weapon[] weapons;
-
-        //Snake's rank, must be 1, 2, 3, or 4, else the code is invalid
-        private int rank;
-        public int Rank
-        {
-            get { return rank; }
-        }
+        public Weapon[] weapons;
 
         public void SetWeaponAmmoCount(int id, int count)
         {
@@ -65,6 +94,15 @@ namespace MGPG
 
             }
         }
+        #endregion
+
+        #region Rank
+        //Snake's rank, must be 1, 2, 3, or 4, else the code is invalid
+        private int rank;
+        public int Rank
+        {
+            get { return rank; }
+        }
 
         public void SetRank(int newRank)
         {
@@ -74,6 +112,7 @@ namespace MGPG
             }
             rank = newRank;
         }
+        #endregion
 
         #region Character Conversion
         /// <summary>

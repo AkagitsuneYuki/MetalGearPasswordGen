@@ -1,4 +1,6 @@
-﻿namespace MGPG
+﻿using System;
+
+namespace MGPG
 {
     partial class MainForm
     {
@@ -146,6 +148,7 @@
             this.Rank1Button.TabStop = true;
             this.Rank1Button.Text = "*";
             this.Rank1Button.UseVisualStyleBackColor = true;
+            this.Rank1Button.Click += new System.EventHandler(this.Rank1ButtonClicked);
             // 
             // Rank4Button
             // 
@@ -157,6 +160,7 @@
             this.Rank4Button.TabIndex = 3;
             this.Rank4Button.Text = "****";
             this.Rank4Button.UseVisualStyleBackColor = true;
+            this.Rank4Button.Click += new System.EventHandler(this.Rank4ButtonClicked);
             // 
             // Rank2Button
             // 
@@ -168,6 +172,7 @@
             this.Rank2Button.TabIndex = 1;
             this.Rank2Button.Text = "**";
             this.Rank2Button.UseVisualStyleBackColor = true;
+            this.Rank2Button.Click += new System.EventHandler(this.Rank2ButtonClicked);
             // 
             // Rank3Button
             // 
@@ -179,6 +184,7 @@
             this.Rank3Button.TabIndex = 2;
             this.Rank3Button.Text = "***";
             this.Rank3Button.UseVisualStyleBackColor = true;
+            this.Rank3Button.Click += new System.EventHandler(this.Rank3ButtonClicked);
             // 
             // tabPage2
             // 
@@ -444,6 +450,7 @@
             this.ResumeLayout(false);
 
         }
+
 
         #endregion
 

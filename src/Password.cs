@@ -8,12 +8,71 @@ namespace MGPG
 {
     internal class Password
     {
+
+        public Password()
+        {
+            rank = 1;
+            weapons = new Weapon[8];
+        } 
+
+       public enum WeaponID
+        {
+            HandGun,
+            Mines,
+            Explosives,
+            Missiles,
+            MachineGun,
+            Grenades,
+            Rockets,
+            Silencer
+        }
+
+        struct Weapon
+        {
+            public bool obtained;
+            public int ammoCount;
+        }
+
+        private Weapon[] weapons;
+        
         //Snake's rank, must be 1, 2, 3, or 4, else the code is invalid
         private int rank;
         public int Rank { 
             get { return rank; }
         }
 
+        public void SetWeaponAmmoCount(int id, int count)
+        {
+            try
+            {
+                weapons[id].ammoCount = count;
+            }
+            catch 
+            {
+
+            }
+        }
+
+        public void SetWeaponObtained(int id, bool obtained)
+        {
+            try
+            {
+                weapons[id].obtained = obtained;
+            }
+            catch
+            {
+
+            }
+        }
+
+        public void SetRank(int newRank)
+        {
+            if(newRank < 1 || newRank > 4)
+            {
+                throw new ArgumentException("Invalid rank! Must be 1, 2, 3, or 4!");
+            }
+            rank = newRank;
+        }
 
 #region Character Conversion
         /// <summary>

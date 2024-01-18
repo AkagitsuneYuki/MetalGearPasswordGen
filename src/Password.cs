@@ -13,9 +13,9 @@ namespace MGPG
         {
             rank = 1;
             weapons = new Weapon[8];
-        } 
+        }
 
-       public enum WeaponID
+        public enum WeaponID
         {
             HandGun,
             Mines,
@@ -34,10 +34,11 @@ namespace MGPG
         }
 
         private Weapon[] weapons;
-        
+
         //Snake's rank, must be 1, 2, 3, or 4, else the code is invalid
         private int rank;
-        public int Rank { 
+        public int Rank
+        {
             get { return rank; }
         }
 
@@ -47,7 +48,7 @@ namespace MGPG
             {
                 weapons[id].ammoCount = count;
             }
-            catch 
+            catch
             {
 
             }
@@ -67,14 +68,14 @@ namespace MGPG
 
         public void SetRank(int newRank)
         {
-            if(newRank < 1 || newRank > 4)
+            if (newRank < 1 || newRank > 4)
             {
                 throw new ArgumentException("Invalid rank! Must be 1, 2, 3, or 4!");
             }
             rank = newRank;
         }
 
-#region Character Conversion
+        #region Character Conversion
         /// <summary>
         /// Converts a number to the character it represents in the password.
         /// </summary>
@@ -244,7 +245,7 @@ namespace MGPG
                     return 31;
             }
         }
-#endregion
+        #endregion
 
     }
 }

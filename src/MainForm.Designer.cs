@@ -442,7 +442,7 @@ namespace MGPG
             this.EquipmentBox.Controls.Add(this.EquipmentCheckListA);
             this.EquipmentBox.Location = new System.Drawing.Point(234, 6);
             this.EquipmentBox.Name = "EquipmentBox";
-            this.EquipmentBox.Size = new System.Drawing.Size(274, 214);
+            this.EquipmentBox.Size = new System.Drawing.Size(250, 162);
             this.EquipmentBox.TabIndex = 6;
             this.EquipmentBox.TabStop = false;
             this.EquipmentBox.Text = "Equipment";
@@ -463,7 +463,7 @@ namespace MGPG
             "Cigarettes"});
             this.EquipmentCheckListA.Location = new System.Drawing.Point(7, 14);
             this.EquipmentCheckListA.Name = "EquipmentCheckListA";
-            this.EquipmentCheckListA.Size = new System.Drawing.Size(76, 150);
+            this.EquipmentCheckListA.Size = new System.Drawing.Size(76, 135);
             this.EquipmentCheckListA.TabIndex = 0;
             // 
             // EquipmentCheckListB
@@ -482,7 +482,7 @@ namespace MGPG
             "Armor"});
             this.EquipmentCheckListB.Location = new System.Drawing.Point(74, 14);
             this.EquipmentCheckListB.Name = "EquipmentCheckListB";
-            this.EquipmentCheckListB.Size = new System.Drawing.Size(76, 150);
+            this.EquipmentCheckListB.Size = new System.Drawing.Size(76, 135);
             this.EquipmentCheckListB.TabIndex = 1;
             // 
             // EquipmentCheckListC

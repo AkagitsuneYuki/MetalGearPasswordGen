@@ -85,7 +85,7 @@ namespace MGPG
             this.DataTabs.Margin = new System.Windows.Forms.Padding(0);
             this.DataTabs.Name = "DataTabs";
             this.DataTabs.SelectedIndex = 0;
-            this.DataTabs.Size = new System.Drawing.Size(499, 255);
+            this.DataTabs.Size = new System.Drawing.Size(500, 255);
             this.DataTabs.TabIndex = 0;
             // 
             // ItemsTab
@@ -97,7 +97,7 @@ namespace MGPG
             this.ItemsTab.Margin = new System.Windows.Forms.Padding(2);
             this.ItemsTab.Name = "ItemsTab";
             this.ItemsTab.Padding = new System.Windows.Forms.Padding(2);
-            this.ItemsTab.Size = new System.Drawing.Size(491, 229);
+            this.ItemsTab.Size = new System.Drawing.Size(492, 229);
             this.ItemsTab.TabIndex = 0;
             this.ItemsTab.Text = "Snake";
             this.ItemsTab.UseVisualStyleBackColor = true;
@@ -138,6 +138,7 @@ namespace MGPG
             0,
             0,
             0});
+            this.RationsCounterBox.ValueChanged += new System.EventHandler(this.RationsCounterBox_ValueChanged);
             // 
             // RationsCheckBox
             // 
@@ -545,7 +546,7 @@ namespace MGPG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(498, 366);
+            this.ClientSize = new System.Drawing.Size(500, 366);
             this.Controls.Add(this.DataTabs);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";

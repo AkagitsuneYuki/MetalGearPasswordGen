@@ -142,5 +142,10 @@ namespace MGPG
                     return;
             }
         }
+
+        private void RationsCounterBox_ValueChanged(object sender, EventArgs e)
+        {
+            password.equipment.rations = (int)RationsCounterBox.Value;
+        }
     }
 }

@@ -136,6 +136,14 @@ namespace MGPG
 
         #endregion
 
+        public struct Events
+        {
+            public bool captured;
+            public bool recovered;
+        }
+
+        public Events events = new Events();
+
         #region Character Conversion
         /// <summary>
         /// Converts a number to the character it represents in the password.
@@ -307,6 +315,133 @@ namespace MGPG
             }
         }
         #endregion
+
+        public string GeneratePassword()
+        {
+            string output = "";
+
+            int[] table = new int[24];
+            int word = 0;
+
+            //word 1
+            //character 1
+            table[word * 5 + 0] += bosses[(int)BossID.VermonCaTaffy] == true ? 16 : 0;
+            table[word * 5 + 0] += bosses[(int)BossID.Supercomputer] == true ? 8 : 0;
+            table[word * 5 + 0] += rank;
+            //character 2
+            table[word * 5 + 1] += bosses[(int)BossID.Tank] == true ? 16 : 0;
+            table[word * 5 + 1] += bosses[(int)BossID.BullTank] == true ? 8 : 0;
+            table[word * 5 + 1] += bosses[(int)BossID.Shotgunner] == true ? 4 : 0;
+            table[word * 5 + 1] += bosses[(int)BossID.TwinShot] == true ? 2 : 0;
+            table[word * 5 + 1] += bosses[(int)BossID.MachineGunKid] == true ? 1 : 0;
+            //character 3
+            table[word * 5 + 2] += weapons[(int)WeaponID.MachineGun].obtained == true ? 16 : 0;
+            table[word * 5 + 2] += weapons[(int)WeaponID.Missiles].obtained == true ? 8 : 0;
+            table[word * 5 + 2] += weapons[(int)WeaponID.Explosives].obtained == true ? 4 : 0;
+            table[word * 5 + 2] += weapons[(int)WeaponID.Mines].obtained == true ? 2 : 0;
+            table[word * 5 + 2] += weapons[(int)WeaponID.HandGun].obtained == true ? 1 : 0;
+            //character 4
+            table[word * 5 + 3] += prisoners[0] == true ? 16 : 0;
+            table[word * 5 + 3] += prisoners[1] == true ? 8 : 0;
+            table[word * 5 + 3] += prisoners[2] == true ? 4 : 0;
+            table[word * 5 + 3] += prisoners[3] == true ? 2 : 0;
+            table[word * 5 + 3] += prisoners[4] == true ? 1 : 0;
+            //character 5
+            table[word * 5 + 4] += prisoners[5] == true ? 16 : 0;
+            table[word * 5 + 4] += prisoners[6] == true ? 8 : 0;
+            table[word * 5 + 4] += prisoners[7] == true ? 4 : 0;
+            table[word * 5 + 4] += prisoners[8] == true ? 2 : 0;
+            table[word * 5 + 4] += prisoners[9] == true ? 1 : 0;
+            word++;
+
+            //word 2
+            //character 1
+            table[word * 5 + 0] += prisoners[10] == true ? 16 : 0;
+            table[word * 5 + 0] += prisoners[11] == true ? 8 : 0;
+            table[word * 5 + 0] += prisoners[12] == true ? 4 : 0;
+            table[word * 5 + 0] += prisoners[13] == true ? 2 : 0;
+            //character 2
+            table[word * 5 + 1] += equipment.card5 == true ? 16 : 0;
+            table[word * 5 + 1] += equipment.card4 == true ? 8 : 0;
+            table[word * 5 + 1] += equipment.card3 == true ? 4 : 0;
+            table[word * 5 + 1] += equipment.card2 == true ? 2 : 0;
+            table[word * 5 + 1] += equipment.card1 == true ? 1 : 0;
+            //character 3
+            table[word * 5 + 2] += equipment.bbSuit == true ? 16 : 0;
+            table[word * 5 + 2] += equipment.cardboard == true ? 8 : 0;
+            table[word * 5 + 2] += equipment.binoculars == true ? 4 : 0;
+            table[word * 5 + 2] += equipment.gasmask == true ? 2 : 0;
+            table[word * 5 + 2] += equipment.cigarettes == true ? 1 : 0;
+            //character 4
+            table[word * 5 + 3] += equipment.light == true ? 16 : 0;
+            table[word * 5 + 3] += equipment.antidote == true ? 8 : 0;
+            table[word * 5 + 3] += equipment.antenna == true ? 4 : 0;
+            table[word * 5 + 3] += equipment.armor == true ? 2 : 0;
+            table[word * 5 + 3] += equipment.detector == true ? 1 : 0;
+            //character 5
+            table[word * 5 + 4] += equipment.rations;
+            word++;
+
+            //word 3
+            //character 1
+            table[word * 5 + 0] += weapons[(int)WeaponID.HandGun].ammoCount & 0b11111;
+            //character 2
+            table[word * 5 + 1] += weapons[(int)WeaponID.Missiles].ammoCount;
+            //character 3
+            table[word * 5 + 2] += weapons[(int)WeaponID.Explosives].ammoCount;
+            //character 4
+            table[word * 5 + 3] += weapons[(int)WeaponID.Mines].ammoCount;
+            //character 5
+            table[word * 5 + 4] += weapons[(int)WeaponID.MachineGun].ammoCount & 0b11111;
+            word++;
+
+            //word 4
+            //character 1
+            table[word * 5 + 0] += weapons[(int)WeaponID.Grenades].ammoCount & 0b11111;
+            //character 2
+            table[word * 5 + 1] += weapons[(int)WeaponID.Rockets].ammoCount;
+            //character 3
+            table[word * 5 + 2] += (weapons[(int)WeaponID.Grenades].ammoCount & 0b1100000) >> 2;
+            table[word * 5 + 2] += (weapons[((int)WeaponID.MachineGun)].ammoCount & 0b11100000) >> 4;
+            //character 4
+            table[word * 5 + 3] += equipment.googles == true ? 16 : 0;
+            table[word * 5 + 3] += equipment.uniform == true ? 8 : 0;
+            table[word * 5 + 3] += bosses[(int)BossID.CowardDuck] == true ? 4 : 0;
+            table[word * 5 + 3] += bosses[(int)BossID.FireTrooper] == true ? 2 : 0;
+            table[word * 5 + 3] += bosses[(int)BossID.Arnold] == true ? 1 : 0;
+            //character 5
+            table[word * 5 + 4] += equipment.oxygen == true ? 16 : 0;
+            table[word * 5 + 4] += equipment.compass == true ? 8 : 0;
+            table[word * 5 + 4] += weapons[(int)WeaponID.Silencer].obtained == true ? 4 : 0;
+            table[word * 5 + 4] += weapons[(int)WeaponID.Rockets].obtained == true ? 2 : 0;
+            table[word * 5 + 4] += weapons[(int)WeaponID.Grenades].obtained == true ? 1 : 0;
+            word++;
+
+            //word 5
+            //character 1
+            table[word * 5 + 0] += events.captured == true ? 16 : 0;
+            table[word * 5 + 0] += prisoners[14] == true ? 2 : 0;
+            table[word * 5 + 0] += prisoners[15] == true ? 1 : 0;
+            //character 2
+            table[word * 5 + 1] += (weapons[(int)WeaponID.HandGun].ammoCount & 0b1100000) >> 2;
+            table[word * 5 + 1] += prisoners[16] == true ? 4 : 0;
+            table[word * 5 + 1] += prisoners[17] == true ? 2 : 0;
+            table[word * 5 + 1] += prisoners[18] == true ? 1 : 0;
+            //character 3
+            table[word * 5 + 2] += equipment.glove == true ? 16 : 0;
+            table[word * 5 + 2] += equipment.transmitter == true ? 8 : 0;
+            table[word * 5 + 2] += prisoners[19] == true ? 4 : 0;
+            table[word * 5 + 2] += prisoners[20] == true ? 2 : 0;
+            table[word * 5 + 2] += prisoners[21] == true ? 1 : 0;
+            //character 4
+            table[word * 5 + 3] += events.recovered == true ? 16 : 0;
+            table[word * 5 + 3] += (weapons[(int)WeaponID.HandGun].ammoCount & 128) >> 4;
+            table[word * 5 + 3] += equipment.card8 == true ? 4 : 0;
+            table[word * 5 + 3] += equipment.card7 == true ? 2 : 0;
+            table[word * 5 + 3] += equipment.card6 == true ? 1 : 0;
+
+            return output;
+        }
 
     }
 }

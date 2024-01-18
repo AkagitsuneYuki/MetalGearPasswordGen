@@ -25,6 +25,7 @@ namespace MGPG
             password = new Password();
         }
 
+        #region Rank
         private void Rank1ButtonClicked(object sender, EventArgs e)
         {
             password.SetRank(1);
@@ -43,7 +44,9 @@ namespace MGPG
         {
             password.SetRank(4);
         }
+        #endregion
 
+        #region Equipment
         private void RationsCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             RationsCounterBox.Enabled = RationsCheckBox.Checked;
@@ -147,5 +150,49 @@ namespace MGPG
         {
             password.equipment.rations = (int)RationsCounterBox.Value;
         }
+        #endregion
+
+        #region Weapons
+        private void HandGunBox_CheckedChanged(object sender, EventArgs e)
+        {
+            password.SetWeaponObtained((int)Password.WeaponID.HandGun, HandGunBox.Checked);
+        }
+
+        private void MinesBox_CheckedChanged(object sender, EventArgs e)
+        {
+            password.SetWeaponObtained((int)Password.WeaponID.Mines, MinesBox.Checked);
+        }
+
+        private void ExplosivesBox_CheckedChanged(object sender, EventArgs e)
+        {
+            password.SetWeaponObtained((int)Password.WeaponID.Explosives, ExplosivesBox.Checked);
+        }
+
+        private void MissilesBox_CheckedChanged(object sender, EventArgs e)
+        {
+            password.SetWeaponObtained((int)Password.WeaponID.Missiles, MissilesBox.Checked);
+        }
+
+        private void MachineGunBox_CheckedChanged(object sender, EventArgs e)
+        {
+            password.SetWeaponObtained((int)Password.WeaponID.MachineGun, MachineGunBox.Checked);
+        }
+
+        private void GrenadeBox_CheckedChanged(object sender, EventArgs e)
+        {
+            password.SetWeaponObtained((int)Password.WeaponID.Grenades, GrenadeBox.Checked);
+        }
+
+        private void RocketBox_CheckedChanged(object sender, EventArgs e)
+        {
+            password.SetWeaponObtained((int)Password.WeaponID.Rockets, RocketBox.Checked);
+        }
+
+        private void SilencerBox_CheckedChanged(object sender, EventArgs e)
+        {
+            password.SetWeaponObtained((int)Password.WeaponID.Silencer, SilencerBox.Checked);
+        }
+        #endregion
+
     }
 }

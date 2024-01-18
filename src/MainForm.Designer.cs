@@ -377,6 +377,7 @@ namespace MGPG
             this.SilencerBox.TabIndex = 11;
             this.SilencerBox.Text = "Silencer";
             this.SilencerBox.UseVisualStyleBackColor = true;
+            this.SilencerBox.CheckedChanged += new System.EventHandler(this.SilencerBox_CheckedChanged);
             // 
             // RocketBox
             // 
@@ -387,6 +388,7 @@ namespace MGPG
             this.RocketBox.TabIndex = 10;
             this.RocketBox.Text = "Rocket Launcher";
             this.RocketBox.UseVisualStyleBackColor = true;
+            this.RocketBox.CheckedChanged += new System.EventHandler(this.RocketBox_CheckedChanged);
             // 
             // GrenadeBox
             // 
@@ -397,6 +399,7 @@ namespace MGPG
             this.GrenadeBox.TabIndex = 9;
             this.GrenadeBox.Text = "Grenade Launcher";
             this.GrenadeBox.UseVisualStyleBackColor = true;
+            this.GrenadeBox.CheckedChanged += new System.EventHandler(this.GrenadeBox_CheckedChanged);
             // 
             // MachineGunBox
             // 
@@ -407,6 +410,7 @@ namespace MGPG
             this.MachineGunBox.TabIndex = 8;
             this.MachineGunBox.Text = "Machine Gun";
             this.MachineGunBox.UseVisualStyleBackColor = true;
+            this.MachineGunBox.CheckedChanged += new System.EventHandler(this.MachineGunBox_CheckedChanged);
             // 
             // MissilesBox
             // 
@@ -417,6 +421,7 @@ namespace MGPG
             this.MissilesBox.TabIndex = 7;
             this.MissilesBox.Text = "Missiles";
             this.MissilesBox.UseVisualStyleBackColor = true;
+            this.MissilesBox.CheckedChanged += new System.EventHandler(this.MissilesBox_CheckedChanged);
             // 
             // ExplosivesBox
             // 
@@ -427,6 +432,7 @@ namespace MGPG
             this.ExplosivesBox.TabIndex = 6;
             this.ExplosivesBox.Text = "Explosives";
             this.ExplosivesBox.UseVisualStyleBackColor = true;
+            this.ExplosivesBox.CheckedChanged += new System.EventHandler(this.ExplosivesBox_CheckedChanged);
             // 
             // MinesBox
             // 
@@ -437,6 +443,7 @@ namespace MGPG
             this.MinesBox.TabIndex = 5;
             this.MinesBox.Text = "Mines";
             this.MinesBox.UseVisualStyleBackColor = true;
+            this.MinesBox.CheckedChanged += new System.EventHandler(this.MinesBox_CheckedChanged);
             // 
             // HandGunRoundsBox
             // 
@@ -465,6 +472,7 @@ namespace MGPG
             this.HandGunBox.TabIndex = 3;
             this.HandGunBox.Text = "Hand Gun";
             this.HandGunBox.UseVisualStyleBackColor = true;
+            this.HandGunBox.CheckedChanged += new System.EventHandler(this.HandGunBox_CheckedChanged);
             // 
             // RankBox
             // 

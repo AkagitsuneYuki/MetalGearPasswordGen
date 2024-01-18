@@ -12,8 +12,6 @@ namespace MGPG
         public Password()
         {
             rank = 1;
-            weapons = new Weapon[8];
-            equipment = new Equipment();
         }
 
         #region Equipment
@@ -47,7 +45,7 @@ namespace MGPG
             public int rations;
         }
         
-        public Equipment equipment;
+        public Equipment equipment = new Equipment();
         #endregion
 
         #region Weapons
@@ -69,7 +67,7 @@ namespace MGPG
             public int ammoCount;
         }
 
-        public Weapon[] weapons;
+        public Weapon[] weapons = new Weapon[8];
 
         public void SetWeaponAmmoCount(int id, int count)
         {
@@ -112,6 +110,30 @@ namespace MGPG
             }
             rank = newRank;
         }
+        #endregion
+
+        #region Bosses
+        public enum BossID
+        {
+            Shotgunner,
+            MachineGunKid,
+            TwinShot,
+            Tank,
+            BullTank,
+            Arnold,
+            CowardDuck,
+            FireTrooper,
+            Supercomputer,
+            VermonCaTaffy
+        }
+
+        public bool[] bosses = new bool[10];
+        #endregion
+
+        #region Prisoners
+
+        public bool[] prisoners = new bool[22];
+
         #endregion
 
         #region Character Conversion

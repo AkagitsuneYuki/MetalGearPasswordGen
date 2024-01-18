@@ -246,15 +246,31 @@ namespace MGPG
         }
         #endregion
 
+        #region Prisoners
         private void PrisonerCheckList_SelectedIndexChanged(object sender, EventArgs e)
         {
             PrisonerCheckList.ClearSelected();
         }
 
+        private void PrisonerCheckList_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            password.prisoners[PrisonerCheckList.SelectedIndex] = e.NewValue == CheckState.Checked;
+        }
+        #endregion
+
+        #region Bosses
+
         private void BossCheckList_SelectedIndexChanged(object sender, EventArgs e)
         {
             BossCheckList.ClearSelected();
         }
+
+        private void BossCheckList_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            password.bosses[BossCheckList.SelectedIndex] = e.NewValue == CheckState.Checked;
+        }
+
+        #endregion
 
     }
 }

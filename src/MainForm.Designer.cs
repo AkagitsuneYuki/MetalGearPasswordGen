@@ -622,6 +622,7 @@ namespace MGPG
             this.PrisonerCheckList.Name = "PrisonerCheckList";
             this.PrisonerCheckList.Size = new System.Drawing.Size(306, 150);
             this.PrisonerCheckList.TabIndex = 0;
+            this.PrisonerCheckList.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.PrisonerCheckList_ItemCheck);
             this.PrisonerCheckList.SelectedIndexChanged += new System.EventHandler(this.PrisonerCheckList_SelectedIndexChanged);
             // 
             // SpecialEventsBox
@@ -687,6 +688,7 @@ namespace MGPG
             this.BossCheckList.Name = "BossCheckList";
             this.BossCheckList.Size = new System.Drawing.Size(107, 150);
             this.BossCheckList.TabIndex = 0;
+            this.BossCheckList.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.BossCheckList_ItemCheck);
             this.BossCheckList.SelectedIndexChanged += new System.EventHandler(this.BossCheckList_SelectedIndexChanged);
             // 
             // PasswordTextBox

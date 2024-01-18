@@ -61,7 +61,14 @@ namespace MGPG
             this.Rank4Button = new System.Windows.Forms.RadioButton();
             this.Rank2Button = new System.Windows.Forms.RadioButton();
             this.Rank3Button = new System.Windows.Forms.RadioButton();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.EventsTab = new System.Windows.Forms.TabPage();
+            this.BossBox = new System.Windows.Forms.GroupBox();
+            this.BossCheckList = new System.Windows.Forms.CheckedListBox();
+            this.SpecialEventsBox = new System.Windows.Forms.GroupBox();
+            this.PrisonersBox = new System.Windows.Forms.GroupBox();
+            this.PrisonerCheckList = new System.Windows.Forms.CheckedListBox();
+            this.CapturedCheckBox = new System.Windows.Forms.CheckBox();
+            this.RecoverGearCheckBox = new System.Windows.Forms.CheckBox();
             this.DataTabs.SuspendLayout();
             this.ItemsTab.SuspendLayout();
             this.EquipmentBox.SuspendLayout();
@@ -75,12 +82,16 @@ namespace MGPG
             ((System.ComponentModel.ISupportInitialize)(this.MinesCountBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HandGunRoundsBox)).BeginInit();
             this.RankBox.SuspendLayout();
+            this.EventsTab.SuspendLayout();
+            this.BossBox.SuspendLayout();
+            this.SpecialEventsBox.SuspendLayout();
+            this.PrisonersBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // DataTabs
             // 
             this.DataTabs.Controls.Add(this.ItemsTab);
-            this.DataTabs.Controls.Add(this.tabPage2);
+            this.DataTabs.Controls.Add(this.EventsTab);
             this.DataTabs.Location = new System.Drawing.Point(0, 0);
             this.DataTabs.Margin = new System.Windows.Forms.Padding(0);
             this.DataTabs.Name = "DataTabs";
@@ -546,16 +557,128 @@ namespace MGPG
             this.Rank3Button.UseVisualStyleBackColor = true;
             this.Rank3Button.Click += new System.EventHandler(this.Rank3ButtonClicked);
             // 
-            // tabPage2
+            // EventsTab
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage2.Size = new System.Drawing.Size(583, 315);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.EventsTab.Controls.Add(this.PrisonersBox);
+            this.EventsTab.Controls.Add(this.SpecialEventsBox);
+            this.EventsTab.Controls.Add(this.BossBox);
+            this.EventsTab.Location = new System.Drawing.Point(4, 22);
+            this.EventsTab.Margin = new System.Windows.Forms.Padding(2);
+            this.EventsTab.Name = "EventsTab";
+            this.EventsTab.Padding = new System.Windows.Forms.Padding(2);
+            this.EventsTab.Size = new System.Drawing.Size(492, 229);
+            this.EventsTab.TabIndex = 1;
+            this.EventsTab.Text = "Events";
+            this.EventsTab.UseVisualStyleBackColor = true;
+            // 
+            // BossBox
+            // 
+            this.BossBox.Controls.Add(this.BossCheckList);
+            this.BossBox.Location = new System.Drawing.Point(4, 4);
+            this.BossBox.Margin = new System.Windows.Forms.Padding(2);
+            this.BossBox.Name = "BossBox";
+            this.BossBox.Size = new System.Drawing.Size(122, 177);
+            this.BossBox.TabIndex = 0;
+            this.BossBox.TabStop = false;
+            this.BossBox.Text = "Bosses";
+            // 
+            // BossCheckList
+            // 
+            this.BossCheckList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.BossCheckList.CheckOnClick = true;
+            this.BossCheckList.FormattingEnabled = true;
+            this.BossCheckList.Items.AddRange(new object[] {
+            "Shotgunner",
+            "Machine Gun Kid",
+            "Twin Shot",
+            "Tank",
+            "Bull Tank",
+            "Arnold",
+            "Coward Duck",
+            "Fire Trooper",
+            "Supercomputer",
+            "Vermon CaTaffy"});
+            this.BossCheckList.Location = new System.Drawing.Point(7, 20);
+            this.BossCheckList.Name = "BossCheckList";
+            this.BossCheckList.Size = new System.Drawing.Size(107, 150);
+            this.BossCheckList.TabIndex = 0;
+            // 
+            // SpecialEventsBox
+            // 
+            this.SpecialEventsBox.Controls.Add(this.RecoverGearCheckBox);
+            this.SpecialEventsBox.Controls.Add(this.CapturedCheckBox);
+            this.SpecialEventsBox.Location = new System.Drawing.Point(4, 185);
+            this.SpecialEventsBox.Margin = new System.Windows.Forms.Padding(2);
+            this.SpecialEventsBox.Name = "SpecialEventsBox";
+            this.SpecialEventsBox.Size = new System.Drawing.Size(442, 40);
+            this.SpecialEventsBox.TabIndex = 1;
+            this.SpecialEventsBox.TabStop = false;
+            this.SpecialEventsBox.Text = "Special Events";
+            // 
+            // PrisonersBox
+            // 
+            this.PrisonersBox.Controls.Add(this.PrisonerCheckList);
+            this.PrisonersBox.Location = new System.Drawing.Point(130, 4);
+            this.PrisonersBox.Margin = new System.Windows.Forms.Padding(2);
+            this.PrisonersBox.Name = "PrisonersBox";
+            this.PrisonersBox.Size = new System.Drawing.Size(316, 177);
+            this.PrisonersBox.TabIndex = 2;
+            this.PrisonersBox.TabStop = false;
+            this.PrisonersBox.Text = "Prisoners Rescued";
+            // 
+            // PrisonerCheckList
+            // 
+            this.PrisonerCheckList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.PrisonerCheckList.ColumnWidth = 100;
+            this.PrisonerCheckList.FormattingEnabled = true;
+            this.PrisonerCheckList.Items.AddRange(new object[] {
+            "Prisoner #1",
+            "Prisoner #2",
+            "Prisoner #3",
+            "Prisoner #4",
+            "Prisoner #5",
+            "Prisoner #6",
+            "Prisoner #7",
+            "Prisoner #8",
+            "Prisoner #9",
+            "Prisoner #10",
+            "Prisoner #11",
+            "Prisoner #12",
+            "Prisoner #13",
+            "Prisoner #14",
+            "Prisoner #15",
+            "Prisoner #16",
+            "Prisoner #17",
+            "Prisoner #18",
+            "Prisoner #19",
+            "Prisoner #20",
+            "Prisoner #21",
+            "Prisoner #22"});
+            this.PrisonerCheckList.Location = new System.Drawing.Point(2, 20);
+            this.PrisonerCheckList.MultiColumn = true;
+            this.PrisonerCheckList.Name = "PrisonerCheckList";
+            this.PrisonerCheckList.Size = new System.Drawing.Size(306, 150);
+            this.PrisonerCheckList.TabIndex = 0;
+            // 
+            // CapturedCheckBox
+            // 
+            this.CapturedCheckBox.AutoSize = true;
+            this.CapturedCheckBox.Location = new System.Drawing.Point(7, 17);
+            this.CapturedCheckBox.Name = "CapturedCheckBox";
+            this.CapturedCheckBox.Size = new System.Drawing.Size(115, 17);
+            this.CapturedCheckBox.TabIndex = 0;
+            this.CapturedCheckBox.Text = "I\'ve been captured";
+            this.CapturedCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // RecoverGearCheckBox
+            // 
+            this.RecoverGearCheckBox.AutoSize = true;
+            this.RecoverGearCheckBox.Location = new System.Drawing.Point(129, 17);
+            this.RecoverGearCheckBox.Name = "RecoverGearCheckBox";
+            this.RecoverGearCheckBox.Size = new System.Drawing.Size(148, 17);
+            this.RecoverGearCheckBox.TabIndex = 1;
+            this.RecoverGearCheckBox.Text = "I recovered my equipment";
+            this.RecoverGearCheckBox.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -583,6 +706,11 @@ namespace MGPG
             ((System.ComponentModel.ISupportInitialize)(this.HandGunRoundsBox)).EndInit();
             this.RankBox.ResumeLayout(false);
             this.RankBox.PerformLayout();
+            this.EventsTab.ResumeLayout(false);
+            this.BossBox.ResumeLayout(false);
+            this.SpecialEventsBox.ResumeLayout(false);
+            this.SpecialEventsBox.PerformLayout();
+            this.PrisonersBox.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -592,7 +720,7 @@ namespace MGPG
 
         private System.Windows.Forms.TabControl DataTabs;
         private System.Windows.Forms.TabPage ItemsTab;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage EventsTab;
         private System.Windows.Forms.RadioButton Rank4Button;
         private System.Windows.Forms.RadioButton Rank3Button;
         private System.Windows.Forms.RadioButton Rank2Button;
@@ -622,6 +750,13 @@ namespace MGPG
         private System.Windows.Forms.NumericUpDown RationsCounterBox;
         private System.Windows.Forms.CheckBox RationsCheckBox;
         private System.Windows.Forms.CheckedListBox EquipmentCheckListC;
+        private System.Windows.Forms.GroupBox BossBox;
+        private System.Windows.Forms.CheckedListBox BossCheckList;
+        private System.Windows.Forms.GroupBox PrisonersBox;
+        private System.Windows.Forms.CheckedListBox PrisonerCheckList;
+        private System.Windows.Forms.GroupBox SpecialEventsBox;
+        private System.Windows.Forms.CheckBox RecoverGearCheckBox;
+        private System.Windows.Forms.CheckBox CapturedCheckBox;
     }
 }
 

@@ -32,6 +32,12 @@ namespace MGPG
         {
             this.DataTabs = new System.Windows.Forms.TabControl();
             this.ItemsTab = new System.Windows.Forms.TabPage();
+            this.EquipmentBox = new System.Windows.Forms.GroupBox();
+            this.RationsCounterBox = new System.Windows.Forms.NumericUpDown();
+            this.RationsCheckBox = new System.Windows.Forms.CheckBox();
+            this.EquipmentCheckListC = new System.Windows.Forms.CheckedListBox();
+            this.EquipmentCheckListB = new System.Windows.Forms.CheckedListBox();
+            this.EquipmentCheckListA = new System.Windows.Forms.CheckedListBox();
             this.WeaponsBox = new System.Windows.Forms.GroupBox();
             this.AmmoCountLabel = new System.Windows.Forms.Label();
             this.WeaponLabel = new System.Windows.Forms.Label();
@@ -56,14 +62,10 @@ namespace MGPG
             this.Rank2Button = new System.Windows.Forms.RadioButton();
             this.Rank3Button = new System.Windows.Forms.RadioButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.EquipmentBox = new System.Windows.Forms.GroupBox();
-            this.EquipmentCheckListA = new System.Windows.Forms.CheckedListBox();
-            this.EquipmentCheckListB = new System.Windows.Forms.CheckedListBox();
-            this.EquipmentCheckListC = new System.Windows.Forms.CheckedListBox();
-            this.RationsCheckBox = new System.Windows.Forms.CheckBox();
-            this.RationsCounterBox = new System.Windows.Forms.NumericUpDown();
             this.DataTabs.SuspendLayout();
             this.ItemsTab.SuspendLayout();
+            this.EquipmentBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RationsCounterBox)).BeginInit();
             this.WeaponsBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RocketCountBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GrenadeCountBox)).BeginInit();
@@ -73,8 +75,6 @@ namespace MGPG
             ((System.ComponentModel.ISupportInitialize)(this.MinesCountBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HandGunRoundsBox)).BeginInit();
             this.RankBox.SuspendLayout();
-            this.EquipmentBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.RationsCounterBox)).BeginInit();
             this.SuspendLayout();
             // 
             // DataTabs
@@ -85,7 +85,7 @@ namespace MGPG
             this.DataTabs.Margin = new System.Windows.Forms.Padding(0);
             this.DataTabs.Name = "DataTabs";
             this.DataTabs.SelectedIndex = 0;
-            this.DataTabs.Size = new System.Drawing.Size(591, 341);
+            this.DataTabs.Size = new System.Drawing.Size(499, 255);
             this.DataTabs.TabIndex = 0;
             // 
             // ItemsTab
@@ -97,10 +97,118 @@ namespace MGPG
             this.ItemsTab.Margin = new System.Windows.Forms.Padding(2);
             this.ItemsTab.Name = "ItemsTab";
             this.ItemsTab.Padding = new System.Windows.Forms.Padding(2);
-            this.ItemsTab.Size = new System.Drawing.Size(583, 315);
+            this.ItemsTab.Size = new System.Drawing.Size(491, 229);
             this.ItemsTab.TabIndex = 0;
             this.ItemsTab.Text = "Snake";
             this.ItemsTab.UseVisualStyleBackColor = true;
+            // 
+            // EquipmentBox
+            // 
+            this.EquipmentBox.Controls.Add(this.RationsCounterBox);
+            this.EquipmentBox.Controls.Add(this.RationsCheckBox);
+            this.EquipmentBox.Controls.Add(this.EquipmentCheckListC);
+            this.EquipmentBox.Controls.Add(this.EquipmentCheckListB);
+            this.EquipmentBox.Controls.Add(this.EquipmentCheckListA);
+            this.EquipmentBox.Location = new System.Drawing.Point(234, 6);
+            this.EquipmentBox.Name = "EquipmentBox";
+            this.EquipmentBox.Size = new System.Drawing.Size(250, 162);
+            this.EquipmentBox.TabIndex = 6;
+            this.EquipmentBox.TabStop = false;
+            this.EquipmentBox.Text = "Equipment";
+            // 
+            // RationsCounterBox
+            // 
+            this.RationsCounterBox.Enabled = false;
+            this.RationsCounterBox.Location = new System.Drawing.Point(206, 112);
+            this.RationsCounterBox.Maximum = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            this.RationsCounterBox.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.RationsCounterBox.Name = "RationsCounterBox";
+            this.RationsCounterBox.Size = new System.Drawing.Size(34, 20);
+            this.RationsCounterBox.TabIndex = 4;
+            this.RationsCounterBox.Value = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            // 
+            // RationsCheckBox
+            // 
+            this.RationsCheckBox.AutoSize = true;
+            this.RationsCheckBox.Location = new System.Drawing.Point(148, 113);
+            this.RationsCheckBox.Name = "RationsCheckBox";
+            this.RationsCheckBox.Size = new System.Drawing.Size(62, 17);
+            this.RationsCheckBox.TabIndex = 3;
+            this.RationsCheckBox.Text = "Rations";
+            this.RationsCheckBox.UseVisualStyleBackColor = true;
+            this.RationsCheckBox.CheckedChanged += new System.EventHandler(this.RationsCheckBox_CheckedChanged);
+            // 
+            // EquipmentCheckListC
+            // 
+            this.EquipmentCheckListC.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.EquipmentCheckListC.CheckOnClick = true;
+            this.EquipmentCheckListC.FormattingEnabled = true;
+            this.EquipmentCheckListC.Items.AddRange(new object[] {
+            "Antenna",
+            "Antidote",
+            "Light",
+            "Compass",
+            "Oxygen",
+            "Transmitter"});
+            this.EquipmentCheckListC.Location = new System.Drawing.Point(147, 14);
+            this.EquipmentCheckListC.Name = "EquipmentCheckListC";
+            this.EquipmentCheckListC.Size = new System.Drawing.Size(76, 105);
+            this.EquipmentCheckListC.TabIndex = 2;
+            this.EquipmentCheckListC.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.EquipmentCheckListC_ItemCheck);
+            // 
+            // EquipmentCheckListB
+            // 
+            this.EquipmentCheckListB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.EquipmentCheckListB.CheckOnClick = true;
+            this.EquipmentCheckListB.FormattingEnabled = true;
+            this.EquipmentCheckListB.Items.AddRange(new object[] {
+            "Gasmask",
+            "Binoculars",
+            "Cardboard",
+            "B.B. Suit",
+            "Uniform",
+            "Goggles",
+            "Glove",
+            "Detector",
+            "Armor"});
+            this.EquipmentCheckListB.Location = new System.Drawing.Point(74, 14);
+            this.EquipmentCheckListB.Name = "EquipmentCheckListB";
+            this.EquipmentCheckListB.Size = new System.Drawing.Size(76, 135);
+            this.EquipmentCheckListB.TabIndex = 1;
+            this.EquipmentCheckListB.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.EquipmentCheckListB_ItemCheck);
+            // 
+            // EquipmentCheckListA
+            // 
+            this.EquipmentCheckListA.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.EquipmentCheckListA.CheckOnClick = true;
+            this.EquipmentCheckListA.FormattingEnabled = true;
+            this.EquipmentCheckListA.Items.AddRange(new object[] {
+            "Card1",
+            "Card2",
+            "Card3",
+            "Card4",
+            "Card5",
+            "Card6",
+            "Card7",
+            "Card8",
+            "Cigarettes"});
+            this.EquipmentCheckListA.Location = new System.Drawing.Point(7, 14);
+            this.EquipmentCheckListA.Name = "EquipmentCheckListA";
+            this.EquipmentCheckListA.Size = new System.Drawing.Size(76, 135);
+            this.EquipmentCheckListA.TabIndex = 0;
+            this.EquipmentCheckListA.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.EquipmentCheckListA_ItemCheck);
             // 
             // WeaponsBox
             // 
@@ -428,122 +536,16 @@ namespace MGPG
             this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage2.Size = new System.Drawing.Size(307, 315);
+            this.tabPage2.Size = new System.Drawing.Size(583, 315);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // EquipmentBox
-            // 
-            this.EquipmentBox.Controls.Add(this.RationsCounterBox);
-            this.EquipmentBox.Controls.Add(this.RationsCheckBox);
-            this.EquipmentBox.Controls.Add(this.EquipmentCheckListC);
-            this.EquipmentBox.Controls.Add(this.EquipmentCheckListB);
-            this.EquipmentBox.Controls.Add(this.EquipmentCheckListA);
-            this.EquipmentBox.Location = new System.Drawing.Point(234, 6);
-            this.EquipmentBox.Name = "EquipmentBox";
-            this.EquipmentBox.Size = new System.Drawing.Size(250, 162);
-            this.EquipmentBox.TabIndex = 6;
-            this.EquipmentBox.TabStop = false;
-            this.EquipmentBox.Text = "Equipment";
-            // 
-            // EquipmentCheckListA
-            // 
-            this.EquipmentCheckListA.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.EquipmentCheckListA.CheckOnClick = true;
-            this.EquipmentCheckListA.FormattingEnabled = true;
-            this.EquipmentCheckListA.Items.AddRange(new object[] {
-            "Card1",
-            "Card2",
-            "Card3",
-            "Card4",
-            "Card5",
-            "Card6",
-            "Card7",
-            "Card8",
-            "Cigarettes"});
-            this.EquipmentCheckListA.Location = new System.Drawing.Point(7, 14);
-            this.EquipmentCheckListA.Name = "EquipmentCheckListA";
-            this.EquipmentCheckListA.Size = new System.Drawing.Size(76, 135);
-            this.EquipmentCheckListA.TabIndex = 0;
-            this.EquipmentCheckListA.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.EquipmentCheckListA_ItemCheck);
-            // 
-            // EquipmentCheckListB
-            // 
-            this.EquipmentCheckListB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.EquipmentCheckListB.CheckOnClick = true;
-            this.EquipmentCheckListB.FormattingEnabled = true;
-            this.EquipmentCheckListB.Items.AddRange(new object[] {
-            "Gasmask",
-            "Binoculars",
-            "Cardboard",
-            "B.B. Suit",
-            "Uniform",
-            "Goggles",
-            "Glove",
-            "Detector",
-            "Armor"});
-            this.EquipmentCheckListB.Location = new System.Drawing.Point(74, 14);
-            this.EquipmentCheckListB.Name = "EquipmentCheckListB";
-            this.EquipmentCheckListB.Size = new System.Drawing.Size(76, 135);
-            this.EquipmentCheckListB.TabIndex = 1;
-            // 
-            // EquipmentCheckListC
-            // 
-            this.EquipmentCheckListC.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.EquipmentCheckListC.CheckOnClick = true;
-            this.EquipmentCheckListC.FormattingEnabled = true;
-            this.EquipmentCheckListC.Items.AddRange(new object[] {
-            "Antenna",
-            "Antidote",
-            "Light",
-            "Compass",
-            "Oxygen",
-            "Transmitter"});
-            this.EquipmentCheckListC.Location = new System.Drawing.Point(147, 14);
-            this.EquipmentCheckListC.Name = "EquipmentCheckListC";
-            this.EquipmentCheckListC.Size = new System.Drawing.Size(76, 105);
-            this.EquipmentCheckListC.TabIndex = 2;
-            // 
-            // RationsCheckBox
-            // 
-            this.RationsCheckBox.AutoSize = true;
-            this.RationsCheckBox.Location = new System.Drawing.Point(148, 113);
-            this.RationsCheckBox.Name = "RationsCheckBox";
-            this.RationsCheckBox.Size = new System.Drawing.Size(62, 17);
-            this.RationsCheckBox.TabIndex = 3;
-            this.RationsCheckBox.Text = "Rations";
-            this.RationsCheckBox.UseVisualStyleBackColor = true;
-            this.RationsCheckBox.CheckedChanged += new System.EventHandler(this.RationsCheckBox_CheckedChanged);
-            // 
-            // RationsCounterBox
-            // 
-            this.RationsCounterBox.Enabled = false;
-            this.RationsCounterBox.Location = new System.Drawing.Point(206, 112);
-            this.RationsCounterBox.Maximum = new decimal(new int[] {
-            15,
-            0,
-            0,
-            0});
-            this.RationsCounterBox.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.RationsCounterBox.Name = "RationsCounterBox";
-            this.RationsCounterBox.Size = new System.Drawing.Size(34, 20);
-            this.RationsCounterBox.TabIndex = 4;
-            this.RationsCounterBox.Value = new decimal(new int[] {
-            15,
-            0,
-            0,
-            0});
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(498, 366);
             this.Controls.Add(this.DataTabs);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
@@ -551,6 +553,9 @@ namespace MGPG
             this.Load += new System.EventHandler(this.LoadMainForm);
             this.DataTabs.ResumeLayout(false);
             this.ItemsTab.ResumeLayout(false);
+            this.EquipmentBox.ResumeLayout(false);
+            this.EquipmentBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RationsCounterBox)).EndInit();
             this.WeaponsBox.ResumeLayout(false);
             this.WeaponsBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RocketCountBox)).EndInit();
@@ -562,9 +567,6 @@ namespace MGPG
             ((System.ComponentModel.ISupportInitialize)(this.HandGunRoundsBox)).EndInit();
             this.RankBox.ResumeLayout(false);
             this.RankBox.PerformLayout();
-            this.EquipmentBox.ResumeLayout(false);
-            this.EquipmentBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.RationsCounterBox)).EndInit();
             this.ResumeLayout(false);
 
         }

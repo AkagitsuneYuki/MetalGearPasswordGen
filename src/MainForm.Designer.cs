@@ -69,6 +69,9 @@ namespace MGPG
             this.PrisonerCheckList = new System.Windows.Forms.CheckedListBox();
             this.CapturedCheckBox = new System.Windows.Forms.CheckBox();
             this.RecoverGearCheckBox = new System.Windows.Forms.CheckBox();
+            this.PasswordTextBox = new System.Windows.Forms.TextBox();
+            this.GenerateButton = new System.Windows.Forms.Button();
+            this.AutogenButton = new System.Windows.Forms.CheckBox();
             this.DataTabs.SuspendLayout();
             this.ItemsTab.SuspendLayout();
             this.EquipmentBox.SuspendLayout();
@@ -680,15 +683,48 @@ namespace MGPG
             this.RecoverGearCheckBox.Text = "I recovered my equipment";
             this.RecoverGearCheckBox.UseVisualStyleBackColor = true;
             // 
+            // PasswordTextBox
+            // 
+            this.PasswordTextBox.Font = new System.Drawing.Font("Lucida Console", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PasswordTextBox.Location = new System.Drawing.Point(181, 268);
+            this.PasswordTextBox.Multiline = true;
+            this.PasswordTextBox.Name = "PasswordTextBox";
+            this.PasswordTextBox.Size = new System.Drawing.Size(140, 78);
+            this.PasswordTextBox.TabIndex = 1;
+            this.PasswordTextBox.Text = "FUCKM E1111 11111 11111 11111";
+            // 
+            // GenerateButton
+            // 
+            this.GenerateButton.Location = new System.Drawing.Point(214, 352);
+            this.GenerateButton.Name = "GenerateButton";
+            this.GenerateButton.Size = new System.Drawing.Size(75, 23);
+            this.GenerateButton.TabIndex = 2;
+            this.GenerateButton.Text = "Generate";
+            this.GenerateButton.UseVisualStyleBackColor = true;
+            // 
+            // AutogenButton
+            // 
+            this.AutogenButton.AutoSize = true;
+            this.AutogenButton.Location = new System.Drawing.Point(201, 381);
+            this.AutogenButton.Name = "AutogenButton";
+            this.AutogenButton.Size = new System.Drawing.Size(101, 17);
+            this.AutogenButton.TabIndex = 3;
+            this.AutogenButton.Text = "Auto Generate?";
+            this.AutogenButton.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(500, 366);
+            this.ClientSize = new System.Drawing.Size(500, 410);
+            this.Controls.Add(this.AutogenButton);
+            this.Controls.Add(this.GenerateButton);
+            this.Controls.Add(this.PasswordTextBox);
             this.Controls.Add(this.DataTabs);
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "Metal Gear Password Generator";
             this.Load += new System.EventHandler(this.LoadMainForm);
             this.DataTabs.ResumeLayout(false);
             this.ItemsTab.ResumeLayout(false);
@@ -712,6 +748,7 @@ namespace MGPG
             this.SpecialEventsBox.PerformLayout();
             this.PrisonersBox.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -757,6 +794,9 @@ namespace MGPG
         private System.Windows.Forms.GroupBox SpecialEventsBox;
         private System.Windows.Forms.CheckBox RecoverGearCheckBox;
         private System.Windows.Forms.CheckBox CapturedCheckBox;
+        private System.Windows.Forms.TextBox PasswordTextBox;
+        private System.Windows.Forms.Button GenerateButton;
+        private System.Windows.Forms.CheckBox AutogenButton;
     }
 }
 

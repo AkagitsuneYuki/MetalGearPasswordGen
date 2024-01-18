@@ -14,6 +14,7 @@ namespace MGPG
     {
 
         Password password;
+        bool autoGenerate;
 
         public MainForm()
         {
@@ -23,6 +24,7 @@ namespace MGPG
         private void LoadMainForm(object sender, EventArgs e)
         {
             password = new Password();
+            autoGenerate = false;
         }
 
         #region Rank

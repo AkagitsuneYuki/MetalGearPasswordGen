@@ -60,31 +60,31 @@ namespace MGPG
             switch (EquipmentCheckListA.SelectedIndex)
             {
                 case 0:
-                    password.equipment.card1 = e.NewValue == CheckState.Checked ? true : false;
+                    password.equipment.card1 = e.NewValue == CheckState.Checked;
                     return;
                 case 1:
-                    password.equipment.card2 = e.NewValue == CheckState.Checked ? true : false;
+                    password.equipment.card2 = e.NewValue == CheckState.Checked;
                     return;
                 case 2:
-                    password.equipment.card3 = e.NewValue == CheckState.Checked ? true : false;
+                    password.equipment.card3 = e.NewValue == CheckState.Checked;
                     return;
                 case 3:
-                    password.equipment.card4 = e.NewValue == CheckState.Checked ? true : false;
+                    password.equipment.card4 = e.NewValue == CheckState.Checked;
                     return;
                 case 4:
-                    password.equipment.card5 = e.NewValue == CheckState.Checked ? true : false;
+                    password.equipment.card5 = e.NewValue == CheckState.Checked;
                     return;
                 case 5:
-                    password.equipment.card6 = e.NewValue == CheckState.Checked ? true : false;
+                    password.equipment.card6 = e.NewValue == CheckState.Checked;
                     return;
                 case 6:
-                    password.equipment.card7 = e.NewValue == CheckState.Checked ? true : false;
+                    password.equipment.card7 = e.NewValue == CheckState.Checked;
                     return;
                 case 7:
-                    password.equipment.card8 = e.NewValue == CheckState.Checked ? true : false;
+                    password.equipment.card8 = e.NewValue == CheckState.Checked;
                     return;
                 case 8:
-                    password.equipment.cigarettes = e.NewValue == CheckState.Checked ? true : false;
+                    password.equipment.cigarettes = e.NewValue == CheckState.Checked;
                     return;
             }
         }
@@ -94,31 +94,31 @@ namespace MGPG
             switch (EquipmentCheckListB.SelectedIndex)
             {
                 case 0:
-                    password.equipment.gasmask = e.NewValue == CheckState.Checked ? true : false;
+                    password.equipment.gasmask = e.NewValue == CheckState.Checked;
                     return;
                 case 1:
-                    password.equipment.binoculars = e.NewValue == CheckState.Checked ? true : false;
+                    password.equipment.binoculars = e.NewValue == CheckState.Checked;
                     return;
                 case 2:
-                    password.equipment.cardboard = e.NewValue == CheckState.Checked ? true : false;
+                    password.equipment.cardboard = e.NewValue == CheckState.Checked;
                     return;
                 case 3:
-                    password.equipment.bbSuit = e.NewValue == CheckState.Checked ? true : false;
+                    password.equipment.bbSuit = e.NewValue == CheckState.Checked;
                     return;
                 case 4:
-                    password.equipment.uniform = e.NewValue == CheckState.Checked ? true : false;
+                    password.equipment.uniform = e.NewValue == CheckState.Checked;
                     return;
                 case 5:
-                    password.equipment.googles = e.NewValue == CheckState.Checked ? true : false;
+                    password.equipment.googles = e.NewValue == CheckState.Checked;
                     return;
                 case 6:
-                    password.equipment.glove = e.NewValue == CheckState.Checked ? true : false;
+                    password.equipment.glove = e.NewValue == CheckState.Checked;
                     return;
                 case 7:
-                    password.equipment.detector = e.NewValue == CheckState.Checked ? true : false;
+                    password.equipment.detector = e.NewValue == CheckState.Checked;
                     return;
                 case 8:
-                    password.equipment.armor = e.NewValue == CheckState.Checked ? true : false;
+                    password.equipment.armor = e.NewValue == CheckState.Checked;
                     return;
             }
         }
@@ -128,22 +128,22 @@ namespace MGPG
             switch (EquipmentCheckListC.SelectedIndex)
             {
                 case 0:
-                    password.equipment.antenna = e.NewValue == CheckState.Checked ? true : false;
+                    password.equipment.antenna = e.NewValue == CheckState.Checked;
                     return;
                 case 1:
-                    password.equipment.antidote = e.NewValue == CheckState.Checked ? true : false;
+                    password.equipment.antidote = e.NewValue == CheckState.Checked;
                     return;
                 case 2:
-                    password.equipment.light = e.NewValue == CheckState.Checked ? true : false;
+                    password.equipment.light = e.NewValue == CheckState.Checked;
                     return;
                 case 3:
-                    password.equipment.compass = e.NewValue == CheckState.Checked ? true : false;
+                    password.equipment.compass = e.NewValue == CheckState.Checked;
                     return;
                 case 4:
-                    password.equipment.oxygen = e.NewValue == CheckState.Checked ? true : false;
+                    password.equipment.oxygen = e.NewValue == CheckState.Checked;
                     return;
                 case 5:
-                    password.equipment.transmitter = e.NewValue == CheckState.Checked ? true : false;
+                    password.equipment.transmitter = e.NewValue == CheckState.Checked;
                     return;
             }
         }
@@ -151,6 +151,21 @@ namespace MGPG
         private void RationsCounterBox_ValueChanged(object sender, EventArgs e)
         {
             password.equipment.rations = (int)RationsCounterBox.Value;
+        }
+
+        private void EquipmentCheckListA_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            EquipmentCheckListA.ClearSelected();
+        }
+
+        private void EquipmentCheckListB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            EquipmentCheckListB.ClearSelected();
+        }
+
+        private void EquipmentCheckListC_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            EquipmentCheckListC.ClearSelected();
         }
         #endregion
 
@@ -230,6 +245,16 @@ namespace MGPG
             password.SetWeaponAmmoCount((int)Password.WeaponID.Rockets, (int)RocketCountBox.Value);
         }
         #endregion
+
+        private void PrisonerCheckList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            PrisonerCheckList.ClearSelected();
+        }
+
+        private void BossCheckList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            BossCheckList.ClearSelected();
+        }
 
     }
 }

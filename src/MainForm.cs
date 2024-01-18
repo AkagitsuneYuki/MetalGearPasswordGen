@@ -43,5 +43,10 @@ namespace MGPG
         {
             password.SetRank(4);
         }
+
+        private void RationsCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            RationsCounterBox.Enabled = RationsCheckBox.Checked;
+        }
     }
 }

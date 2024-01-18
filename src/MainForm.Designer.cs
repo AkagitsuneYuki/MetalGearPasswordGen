@@ -277,6 +277,7 @@ namespace MGPG
             0,
             0,
             0});
+            this.RocketCountBox.ValueChanged += new System.EventHandler(this.RocketCountBox_ValueChanged);
             // 
             // GrenadeCountBox
             // 
@@ -295,6 +296,7 @@ namespace MGPG
             0,
             0,
             0});
+            this.GrenadeCountBox.ValueChanged += new System.EventHandler(this.GrenadeCountBox_ValueChanged);
             // 
             // MachineGunCountBox
             // 
@@ -313,6 +315,7 @@ namespace MGPG
             0,
             0,
             0});
+            this.MachineGunCountBox.ValueChanged += new System.EventHandler(this.MachineGunCountBox_ValueChanged);
             // 
             // MissilesCountBox
             // 
@@ -331,6 +334,7 @@ namespace MGPG
             0,
             0,
             0});
+            this.MissilesCountBox.ValueChanged += new System.EventHandler(this.MissilesCountBox_ValueChanged);
             // 
             // ExplosivesCountBox
             // 
@@ -349,6 +353,7 @@ namespace MGPG
             0,
             0,
             0});
+            this.ExplosivesCountBox.ValueChanged += new System.EventHandler(this.ExplosivesCountBox_ValueChanged);
             // 
             // MinesCountBox
             // 
@@ -367,6 +372,7 @@ namespace MGPG
             0,
             0,
             0});
+            this.MinesCountBox.ValueChanged += new System.EventHandler(this.MinesCountBox_ValueChanged);
             // 
             // SilencerBox
             // 
@@ -462,6 +468,7 @@ namespace MGPG
             0,
             0,
             0});
+            this.HandGunRoundsBox.ValueChanged += new System.EventHandler(this.HandGunRoundsBox_ValueChanged);
             // 
             // HandGunBox
             // 

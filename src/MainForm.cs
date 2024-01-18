@@ -192,6 +192,41 @@ namespace MGPG
         {
             password.SetWeaponObtained((int)Password.WeaponID.Silencer, SilencerBox.Checked);
         }
+
+        private void HandGunRoundsBox_ValueChanged(object sender, EventArgs e)
+        {
+            password.SetWeaponAmmoCount((int)Password.WeaponID.HandGun, (int)HandGunRoundsBox.Value);
+        }
+
+        private void MinesCountBox_ValueChanged(object sender, EventArgs e)
+        {
+            password.SetWeaponAmmoCount((int)Password.WeaponID.Mines, (int)MinesCountBox.Value);
+        }
+
+        private void ExplosivesCountBox_ValueChanged(object sender, EventArgs e)
+        {
+            password.SetWeaponAmmoCount((int)Password.WeaponID.Explosives, (int)ExplosivesCountBox.Value);
+        }
+
+        private void MissilesCountBox_ValueChanged(object sender, EventArgs e)
+        {
+            password.SetWeaponAmmoCount((int)Password.WeaponID.Missiles, (int)MissilesCountBox.Value);
+        }
+
+        private void MachineGunCountBox_ValueChanged(object sender, EventArgs e)
+        {
+            password.SetWeaponAmmoCount((int)Password.WeaponID.MachineGun, (int)MachineGunCountBox.Value);
+        }
+
+        private void GrenadeCountBox_ValueChanged(object sender, EventArgs e)
+        {
+            password.SetWeaponAmmoCount((int)Password.WeaponID.Grenades, (int)GrenadeCountBox.Value);
+        }
+
+        private void RocketCountBox_ValueChanged(object sender, EventArgs e)
+        {
+            password.SetWeaponAmmoCount((int)Password.WeaponID.Rockets, (int)RocketCountBox.Value);
+        }
         #endregion
 
     }

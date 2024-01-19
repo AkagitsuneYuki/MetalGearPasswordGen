@@ -421,6 +421,10 @@ namespace MGPG
         {
             autoGenerate = AutogenButton.Checked;
             GenerateButton.Enabled = !autoGenerate;
+            if (autoGenerate)
+            {
+                SetPasswordText();
+            }
         }
     }
 }

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MGPG
 {
@@ -46,7 +42,7 @@ namespace MGPG
             public bool ration;
             public int rations;
         }
-        
+
         public Equipment equipment = new Equipment();
         #endregion
 
@@ -450,8 +446,9 @@ namespace MGPG
             table[word * 5 + 3] += equipment.card6 == true ? 1 : 0;
 
             //converts the table to the proper digits
-            for(int letter = 0; letter < table.Length; letter++)
+            for (int letter = 0; letter < table.Length; letter++)
             {
+                //add spaces after every 5th letter
                 if (letter > 0 && letter % 5 == 0)
                 {
                     output += " ";
@@ -474,13 +471,13 @@ namespace MGPG
             int sum = 0;
 
             //sum up all of the letters in the table
-            foreach(int letter in table)
+            foreach (int letter in table)
             {
                 sum += letter;
             }
 
             //add 1, 2, or nothing if these rules are set
-            if(sum > 252)
+            if (sum > 252)
             {
                 sum += sum > 507 ? 2 : 1;
             }

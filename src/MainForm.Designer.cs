@@ -108,9 +108,9 @@ namespace MGPG
             this.ItemsTab.Controls.Add(this.WeaponsBox);
             this.ItemsTab.Controls.Add(this.RankBox);
             this.ItemsTab.Location = new System.Drawing.Point(4, 22);
-            this.ItemsTab.Margin = new System.Windows.Forms.Padding(2);
+            this.ItemsTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ItemsTab.Name = "ItemsTab";
-            this.ItemsTab.Padding = new System.Windows.Forms.Padding(2);
+            this.ItemsTab.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ItemsTab.Size = new System.Drawing.Size(492, 229);
             this.ItemsTab.TabIndex = 0;
             this.ItemsTab.Text = "Snake";
@@ -248,9 +248,9 @@ namespace MGPG
             this.WeaponsBox.Controls.Add(this.HandGunRoundsBox);
             this.WeaponsBox.Controls.Add(this.HandGunBox);
             this.WeaponsBox.Location = new System.Drawing.Point(62, 5);
-            this.WeaponsBox.Margin = new System.Windows.Forms.Padding(2);
+            this.WeaponsBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.WeaponsBox.Name = "WeaponsBox";
-            this.WeaponsBox.Padding = new System.Windows.Forms.Padding(2);
+            this.WeaponsBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.WeaponsBox.Size = new System.Drawing.Size(166, 215);
             this.WeaponsBox.TabIndex = 5;
             this.WeaponsBox.TabStop = false;
@@ -279,8 +279,9 @@ namespace MGPG
             // 
             // RocketCountBox
             // 
+            this.RocketCountBox.Enabled = false;
             this.RocketCountBox.Location = new System.Drawing.Point(115, 169);
-            this.RocketCountBox.Margin = new System.Windows.Forms.Padding(2);
+            this.RocketCountBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.RocketCountBox.Maximum = new decimal(new int[] {
             30,
             0,
@@ -298,8 +299,9 @@ namespace MGPG
             // 
             // GrenadeCountBox
             // 
+            this.GrenadeCountBox.Enabled = false;
             this.GrenadeCountBox.Location = new System.Drawing.Point(115, 145);
-            this.GrenadeCountBox.Margin = new System.Windows.Forms.Padding(2);
+            this.GrenadeCountBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.GrenadeCountBox.Maximum = new decimal(new int[] {
             90,
             0,
@@ -317,8 +319,9 @@ namespace MGPG
             // 
             // MachineGunCountBox
             // 
+            this.MachineGunCountBox.Enabled = false;
             this.MachineGunCountBox.Location = new System.Drawing.Point(115, 123);
-            this.MachineGunCountBox.Margin = new System.Windows.Forms.Padding(2);
+            this.MachineGunCountBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MachineGunCountBox.Maximum = new decimal(new int[] {
             255,
             0,
@@ -336,8 +339,9 @@ namespace MGPG
             // 
             // MissilesCountBox
             // 
+            this.MissilesCountBox.Enabled = false;
             this.MissilesCountBox.Location = new System.Drawing.Point(115, 99);
-            this.MissilesCountBox.Margin = new System.Windows.Forms.Padding(2);
+            this.MissilesCountBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MissilesCountBox.Maximum = new decimal(new int[] {
             20,
             0,
@@ -355,8 +359,9 @@ namespace MGPG
             // 
             // ExplosivesCountBox
             // 
+            this.ExplosivesCountBox.Enabled = false;
             this.ExplosivesCountBox.Location = new System.Drawing.Point(115, 77);
-            this.ExplosivesCountBox.Margin = new System.Windows.Forms.Padding(2);
+            this.ExplosivesCountBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ExplosivesCountBox.Maximum = new decimal(new int[] {
             20,
             0,
@@ -374,8 +379,9 @@ namespace MGPG
             // 
             // MinesCountBox
             // 
+            this.MinesCountBox.Enabled = false;
             this.MinesCountBox.Location = new System.Drawing.Point(115, 53);
-            this.MinesCountBox.Margin = new System.Windows.Forms.Padding(2);
+            this.MinesCountBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MinesCountBox.Maximum = new decimal(new int[] {
             20,
             0,
@@ -470,8 +476,9 @@ namespace MGPG
             // 
             // HandGunRoundsBox
             // 
+            this.HandGunRoundsBox.Enabled = false;
             this.HandGunRoundsBox.Location = new System.Drawing.Point(115, 30);
-            this.HandGunRoundsBox.Margin = new System.Windows.Forms.Padding(2);
+            this.HandGunRoundsBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.HandGunRoundsBox.Maximum = new decimal(new int[] {
             255,
             0,
@@ -505,9 +512,9 @@ namespace MGPG
             this.RankBox.Controls.Add(this.Rank2Button);
             this.RankBox.Controls.Add(this.Rank3Button);
             this.RankBox.Location = new System.Drawing.Point(6, 5);
-            this.RankBox.Margin = new System.Windows.Forms.Padding(2);
+            this.RankBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.RankBox.Name = "RankBox";
-            this.RankBox.Padding = new System.Windows.Forms.Padding(2);
+            this.RankBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.RankBox.Size = new System.Drawing.Size(52, 107);
             this.RankBox.TabIndex = 4;
             this.RankBox.TabStop = false;
@@ -518,7 +525,7 @@ namespace MGPG
             this.Rank1Button.AutoSize = true;
             this.Rank1Button.Checked = true;
             this.Rank1Button.Location = new System.Drawing.Point(4, 17);
-            this.Rank1Button.Margin = new System.Windows.Forms.Padding(2);
+            this.Rank1Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Rank1Button.Name = "Rank1Button";
             this.Rank1Button.Size = new System.Drawing.Size(29, 17);
             this.Rank1Button.TabIndex = 0;
@@ -531,7 +538,7 @@ namespace MGPG
             // 
             this.Rank4Button.AutoSize = true;
             this.Rank4Button.Location = new System.Drawing.Point(4, 83);
-            this.Rank4Button.Margin = new System.Windows.Forms.Padding(2);
+            this.Rank4Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Rank4Button.Name = "Rank4Button";
             this.Rank4Button.Size = new System.Drawing.Size(41, 17);
             this.Rank4Button.TabIndex = 3;
@@ -543,7 +550,7 @@ namespace MGPG
             // 
             this.Rank2Button.AutoSize = true;
             this.Rank2Button.Location = new System.Drawing.Point(4, 39);
-            this.Rank2Button.Margin = new System.Windows.Forms.Padding(2);
+            this.Rank2Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Rank2Button.Name = "Rank2Button";
             this.Rank2Button.Size = new System.Drawing.Size(33, 17);
             this.Rank2Button.TabIndex = 1;
@@ -555,7 +562,7 @@ namespace MGPG
             // 
             this.Rank3Button.AutoSize = true;
             this.Rank3Button.Location = new System.Drawing.Point(4, 61);
-            this.Rank3Button.Margin = new System.Windows.Forms.Padding(2);
+            this.Rank3Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Rank3Button.Name = "Rank3Button";
             this.Rank3Button.Size = new System.Drawing.Size(37, 17);
             this.Rank3Button.TabIndex = 2;
@@ -569,9 +576,9 @@ namespace MGPG
             this.EventsTab.Controls.Add(this.SpecialEventsBox);
             this.EventsTab.Controls.Add(this.BossBox);
             this.EventsTab.Location = new System.Drawing.Point(4, 22);
-            this.EventsTab.Margin = new System.Windows.Forms.Padding(2);
+            this.EventsTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.EventsTab.Name = "EventsTab";
-            this.EventsTab.Padding = new System.Windows.Forms.Padding(2);
+            this.EventsTab.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.EventsTab.Size = new System.Drawing.Size(492, 229);
             this.EventsTab.TabIndex = 1;
             this.EventsTab.Text = "Events";
@@ -581,7 +588,7 @@ namespace MGPG
             // 
             this.PrisonersBox.Controls.Add(this.PrisonerCheckList);
             this.PrisonersBox.Location = new System.Drawing.Point(130, 4);
-            this.PrisonersBox.Margin = new System.Windows.Forms.Padding(2);
+            this.PrisonersBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.PrisonersBox.Name = "PrisonersBox";
             this.PrisonersBox.Size = new System.Drawing.Size(316, 177);
             this.PrisonersBox.TabIndex = 2;
@@ -620,7 +627,7 @@ namespace MGPG
             this.PrisonerCheckList.Location = new System.Drawing.Point(2, 20);
             this.PrisonerCheckList.MultiColumn = true;
             this.PrisonerCheckList.Name = "PrisonerCheckList";
-            this.PrisonerCheckList.Size = new System.Drawing.Size(306, 150);
+            this.PrisonerCheckList.Size = new System.Drawing.Size(306, 135);
             this.PrisonerCheckList.TabIndex = 0;
             this.PrisonerCheckList.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.PrisonerCheckList_ItemCheck);
             this.PrisonerCheckList.SelectedIndexChanged += new System.EventHandler(this.PrisonerCheckList_SelectedIndexChanged);
@@ -630,7 +637,7 @@ namespace MGPG
             this.SpecialEventsBox.Controls.Add(this.RecoverGearCheckBox);
             this.SpecialEventsBox.Controls.Add(this.CapturedCheckBox);
             this.SpecialEventsBox.Location = new System.Drawing.Point(4, 185);
-            this.SpecialEventsBox.Margin = new System.Windows.Forms.Padding(2);
+            this.SpecialEventsBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.SpecialEventsBox.Name = "SpecialEventsBox";
             this.SpecialEventsBox.Size = new System.Drawing.Size(442, 40);
             this.SpecialEventsBox.TabIndex = 1;
@@ -663,7 +670,7 @@ namespace MGPG
             // 
             this.BossBox.Controls.Add(this.BossCheckList);
             this.BossBox.Location = new System.Drawing.Point(4, 4);
-            this.BossBox.Margin = new System.Windows.Forms.Padding(2);
+            this.BossBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BossBox.Name = "BossBox";
             this.BossBox.Size = new System.Drawing.Size(122, 177);
             this.BossBox.TabIndex = 0;
@@ -737,7 +744,7 @@ namespace MGPG
             this.Controls.Add(this.PasswordTextBox);
             this.Controls.Add(this.DataTabs);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Metal Gear Password Generator";

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MGPG
@@ -219,6 +212,7 @@ namespace MGPG
         {
             password.SetWeaponObtained((int)Password.WeaponID.HandGun, HandGunBox.Checked);
             password.SetWeaponAmmoCount((int)Password.WeaponID.HandGun, HandGunBox.Checked ? (int)HandGunRoundsBox.Value : 0);
+            HandGunRoundsBox.Enabled = HandGunBox.Checked;
             if (autoGenerate)
             {
                 SetPasswordText();
@@ -229,6 +223,7 @@ namespace MGPG
         {
             password.SetWeaponObtained((int)Password.WeaponID.Mines, MinesBox.Checked);
             password.SetWeaponAmmoCount((int)Password.WeaponID.Mines, MinesBox.Checked ? (int)MinesCountBox.Value : 0);
+            MinesCountBox.Enabled = MinesBox.Checked;
             if (autoGenerate)
             {
                 SetPasswordText();
@@ -239,6 +234,7 @@ namespace MGPG
         {
             password.SetWeaponObtained((int)Password.WeaponID.Explosives, ExplosivesBox.Checked);
             password.SetWeaponAmmoCount((int)Password.WeaponID.Explosives, ExplosivesBox.Checked ? (int)ExplosivesCountBox.Value : 0);
+            ExplosivesCountBox.Enabled = ExplosivesBox.Checked;
             if (autoGenerate)
             {
                 SetPasswordText();
@@ -249,6 +245,7 @@ namespace MGPG
         {
             password.SetWeaponObtained((int)Password.WeaponID.Missiles, MissilesBox.Checked);
             password.SetWeaponAmmoCount((int)Password.WeaponID.Missiles, MissilesBox.Checked ? (int)MissilesCountBox.Value : 0);
+            MissilesCountBox.Enabled = ExplosivesBox.Checked;
             if (autoGenerate)
             {
                 SetPasswordText();
@@ -259,6 +256,7 @@ namespace MGPG
         {
             password.SetWeaponObtained((int)Password.WeaponID.MachineGun, MachineGunBox.Checked);
             password.SetWeaponAmmoCount((int)Password.WeaponID.MachineGun, MachineGunBox.Checked ? (int)MachineGunCountBox.Value : 0);
+            MachineGunCountBox.Enabled = MachineGunBox.Checked;
             if (autoGenerate)
             {
                 SetPasswordText();
@@ -269,6 +267,7 @@ namespace MGPG
         {
             password.SetWeaponObtained((int)Password.WeaponID.Grenades, GrenadeBox.Checked);
             password.SetWeaponAmmoCount((int)Password.WeaponID.Grenades, GrenadeBox.Checked ? (int)GrenadeCountBox.Value : 0);
+            GrenadeCountBox.Enabled = GrenadeBox.Checked;
             if (autoGenerate)
             {
                 SetPasswordText();
@@ -279,6 +278,7 @@ namespace MGPG
         {
             password.SetWeaponObtained((int)Password.WeaponID.Rockets, RocketBox.Checked);
             password.SetWeaponAmmoCount((int)Password.WeaponID.Rockets, RocketBox.Checked ? (int)RocketCountBox.Value : 0);
+            RocketCountBox.Enabled = RocketBox.Checked;
             if (autoGenerate)
             {
                 SetPasswordText();

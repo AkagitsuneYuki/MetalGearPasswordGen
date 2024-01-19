@@ -138,6 +138,7 @@ namespace MGPG
 
         #endregion
 
+        #region Events
         public struct Events
         {
             public bool captured;
@@ -145,6 +146,7 @@ namespace MGPG
         }
 
         public Events events = new Events();
+        #endregion
 
         #region Character Conversion
         /// <summary>
@@ -317,6 +319,8 @@ namespace MGPG
             }
         }
         #endregion
+
+        #region Password Generation
         /// <summary>
         /// Generates a password based on the selected data.
         /// </summary>
@@ -491,6 +495,7 @@ namespace MGPG
 
             return sum;
         }
+        #endregion
 
     }
 }

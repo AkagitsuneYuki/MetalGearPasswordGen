@@ -25,6 +25,8 @@ namespace MGPG
         {
             password = new Password();
             autoGenerate = false;
+            //set cigarettes to true
+            EquipmentCheckListA.SetItemChecked(8, true);
         }
 
         #region Rank
@@ -270,6 +272,18 @@ namespace MGPG
             password.bosses[BossCheckList.SelectedIndex] = e.NewValue == CheckState.Checked;
         }
 
+        #endregion
+
+        #region Events
+        private void CapturedCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            password.events.captured = CapturedCheckBox.Checked;
+        }
+
+        private void RecoverGearCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            password.events.recovered = RecoverGearCheckBox.Checked;
+        }
         #endregion
 
     }

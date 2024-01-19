@@ -714,6 +714,7 @@ namespace MGPG
             this.GenerateButton.TabIndex = 2;
             this.GenerateButton.Text = "Generate";
             this.GenerateButton.UseVisualStyleBackColor = true;
+            this.GenerateButton.Click += new System.EventHandler(this.GenerateButton_Click);
             // 
             // AutogenButton
             // 

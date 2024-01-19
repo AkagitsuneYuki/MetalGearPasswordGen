@@ -27,6 +27,12 @@ namespace MGPG
             autoGenerate = false;
             //set cigarettes to true
             EquipmentCheckListA.SetItemChecked(8, true);
+            SetPasswordText();
+        }
+
+        private void SetPasswordText()
+        {
+            PasswordTextBox.Text = password.GeneratePassword();
         }
 
         #region Rank
@@ -55,6 +61,7 @@ namespace MGPG
         {
             RationsCounterBox.Enabled = RationsCheckBox.Checked;
             password.equipment.ration = RationsCheckBox.Checked;
+            password.equipment.rations = RationsCheckBox.Checked ? (int)RationsCounterBox.Value : 0;
         }
 
         private void EquipmentCheckListA_ItemCheck(object sender, ItemCheckEventArgs e)
@@ -286,5 +293,9 @@ namespace MGPG
         }
         #endregion
 
+        private void GenerateButton_Click(object sender, EventArgs e)
+        {
+            SetPasswordText();
+        }
     }
 }

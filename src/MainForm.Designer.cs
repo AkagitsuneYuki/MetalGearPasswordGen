@@ -725,6 +725,7 @@ namespace MGPG
             this.AutogenButton.TabIndex = 3;
             this.AutogenButton.Text = "Auto Generate?";
             this.AutogenButton.UseVisualStyleBackColor = true;
+            this.AutogenButton.CheckedChanged += new System.EventHandler(this.AutogenButton_CheckedChanged);
             // 
             // MainForm
             // 

@@ -488,7 +488,7 @@ namespace MGPG
             sum += 7;
 
             //subtract 32 from the sum until it's less than 32
-            while (sum > 32)
+            while (sum >= 32)
             {
                 sum -= 32;
             }

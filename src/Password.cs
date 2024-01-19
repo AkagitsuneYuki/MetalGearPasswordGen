@@ -407,7 +407,7 @@ namespace MGPG
             table[word * 5 + 1] += weapons[(int)WeaponID.Rockets].ammoCount;
             //character 3
             table[word * 5 + 2] += (weapons[(int)WeaponID.Grenades].ammoCount & 0b1100000) >> 2;
-            table[word * 5 + 2] += (weapons[((int)WeaponID.MachineGun)].ammoCount & 0b11100000) >> 4;
+            table[word * 5 + 2] += (weapons[((int)WeaponID.MachineGun)].ammoCount & 0b11100000) >> 5;
             //character 4
             table[word * 5 + 3] += equipment.googles == true ? 16 : 0;
             table[word * 5 + 3] += equipment.uniform == true ? 8 : 0;

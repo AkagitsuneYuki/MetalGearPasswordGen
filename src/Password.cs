@@ -12,6 +12,8 @@ namespace MGPG
         public Password()
         {
             rank = 1;
+            equipment.cigarettes = true;
+            GeneratePassword();
         }
 
         #region Equipment
@@ -315,7 +317,10 @@ namespace MGPG
             }
         }
         #endregion
-
+        /// <summary>
+        /// Generates a password based on the selected data.
+        /// </summary>
+        /// <returns>Returns a valid password.</returns>
         public string GeneratePassword()
         {
             string output = "";
@@ -440,7 +445,51 @@ namespace MGPG
             table[word * 5 + 3] += equipment.card7 == true ? 2 : 0;
             table[word * 5 + 3] += equipment.card6 == true ? 1 : 0;
 
+            //converts the table to the proper digits
+            for(int letter = 0; letter < table.Length; letter++)
+            {
+                if (letter > 0 && letter % 5 == 0)
+                {
+                    output += " ";
+                }
+                output += BitsToDigit(table[letter]);
+            }
+            //add the checksum digit
+            output += BitsToDigit(Checksum(table));
+
             return output;
+        }
+
+        /// <summary>
+        /// Takes an integer array and returns its checksum.
+        /// </summary>
+        /// <param name="table"></param>
+        /// <returns>Returns an integer between 0 and 31, inclusive.</returns>
+        private int Checksum(int[] table)
+        {
+            int sum = 0;
+
+            //sum up all of the letters in the table
+            foreach(int letter in table)
+            {
+                sum += letter;
+            }
+
+            //add 1, 2, or nothing if these rules are set
+            if(sum > 252)
+            {
+                sum += sum > 507 ? 2 : 1;
+            }
+            //7 is always added regardless
+            sum += 7;
+
+            //subtract 32 from the sum until it's less than 32
+            while (sum > 32)
+            {
+                sum -= 32;
+            }
+
+            return sum;
         }
 
     }

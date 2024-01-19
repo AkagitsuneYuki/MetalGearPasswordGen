@@ -30,6 +30,7 @@ namespace MGPG
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.DataTabs = new System.Windows.Forms.TabControl();
             this.ItemsTab = new System.Windows.Forms.TabPage();
             this.EquipmentBox = new System.Windows.Forms.GroupBox();
@@ -627,7 +628,7 @@ namespace MGPG
             this.PrisonerCheckList.Location = new System.Drawing.Point(2, 20);
             this.PrisonerCheckList.MultiColumn = true;
             this.PrisonerCheckList.Name = "PrisonerCheckList";
-            this.PrisonerCheckList.Size = new System.Drawing.Size(306, 135);
+            this.PrisonerCheckList.Size = new System.Drawing.Size(306, 150);
             this.PrisonerCheckList.TabIndex = 0;
             this.PrisonerCheckList.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.PrisonerCheckList_ItemCheck);
             this.PrisonerCheckList.SelectedIndexChanged += new System.EventHandler(this.PrisonerCheckList_SelectedIndexChanged);
@@ -744,6 +745,7 @@ namespace MGPG
             this.Controls.Add(this.PasswordTextBox);
             this.Controls.Add(this.DataTabs);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "MainForm";

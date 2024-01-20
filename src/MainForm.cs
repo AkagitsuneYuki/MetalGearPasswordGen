@@ -245,7 +245,7 @@ namespace MGPG
         {
             password.SetWeaponObtained((int)Password.WeaponID.Missiles, MissilesBox.Checked);
             password.SetWeaponAmmoCount((int)Password.WeaponID.Missiles, MissilesBox.Checked ? (int)MissilesCountBox.Value : 0);
-            MissilesCountBox.Enabled = ExplosivesBox.Checked;
+            MissilesCountBox.Enabled = MissilesBox.Checked;
             if (autoGenerate)
             {
                 SetPasswordText();

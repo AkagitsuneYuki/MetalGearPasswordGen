@@ -412,6 +412,46 @@ namespace MGPG
         }
         #endregion
 
+        #region Unknowns
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            password.unknowns.word2letter1bit5 = word2letter1bit5.Checked;
+            if (autoGenerate)
+            {
+                SetPasswordText();
+            }
+        }
+
+        private void word2letter5bit1_CheckedChanged(object sender, EventArgs e)
+        {
+            password.unknowns.word2letter5bit1 = word2letter5bit1.Checked;
+            if (autoGenerate)
+            {
+                SetPasswordText();
+            }
+        }
+
+        private void unk_DrainHP_CheckedChanged(object sender, EventArgs e)
+        {
+            password.unknowns.unk_DrainHP = unk_DrainHP.Checked;
+            if (autoGenerate)
+            {
+                SetPasswordText();
+            }
+        }
+
+        private void word5letter1bit3_CheckedChanged(object sender, EventArgs e)
+        {
+            password.unknowns.word5letter1bit3 = word5letter1bit3.Checked;
+            if (autoGenerate)
+            {
+                SetPasswordText();
+            }
+        }
+
+        #endregion
+
         private void GenerateButton_Click(object sender, EventArgs e)
         {
             SetPasswordText();
@@ -426,5 +466,6 @@ namespace MGPG
                 SetPasswordText();
             }
         }
+
     }
 }

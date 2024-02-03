@@ -70,6 +70,11 @@ namespace MGPG
             this.CapturedCheckBox = new System.Windows.Forms.CheckBox();
             this.BossBox = new System.Windows.Forms.GroupBox();
             this.BossCheckList = new System.Windows.Forms.CheckedListBox();
+            this.UnknownsTab = new System.Windows.Forms.TabPage();
+            this.word5letter1bit3 = new System.Windows.Forms.CheckBox();
+            this.unk_DrainHP = new System.Windows.Forms.CheckBox();
+            this.word2letter5bit1 = new System.Windows.Forms.CheckBox();
+            this.word2letter1bit5 = new System.Windows.Forms.CheckBox();
             this.PasswordTextBox = new System.Windows.Forms.TextBox();
             this.GenerateButton = new System.Windows.Forms.Button();
             this.AutogenButton = new System.Windows.Forms.CheckBox();
@@ -90,12 +95,14 @@ namespace MGPG
             this.PrisonersBox.SuspendLayout();
             this.SpecialEventsBox.SuspendLayout();
             this.BossBox.SuspendLayout();
+            this.UnknownsTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // DataTabs
             // 
             this.DataTabs.Controls.Add(this.ItemsTab);
             this.DataTabs.Controls.Add(this.EventsTab);
+            this.DataTabs.Controls.Add(this.UnknownsTab);
             this.DataTabs.Location = new System.Drawing.Point(0, 0);
             this.DataTabs.Margin = new System.Windows.Forms.Padding(0);
             this.DataTabs.Name = "DataTabs";
@@ -628,7 +635,7 @@ namespace MGPG
             this.PrisonerCheckList.Location = new System.Drawing.Point(2, 20);
             this.PrisonerCheckList.MultiColumn = true;
             this.PrisonerCheckList.Name = "PrisonerCheckList";
-            this.PrisonerCheckList.Size = new System.Drawing.Size(306, 150);
+            this.PrisonerCheckList.Size = new System.Drawing.Size(306, 135);
             this.PrisonerCheckList.TabIndex = 0;
             this.PrisonerCheckList.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.PrisonerCheckList_ItemCheck);
             this.PrisonerCheckList.SelectedIndexChanged += new System.EventHandler(this.PrisonerCheckList_SelectedIndexChanged);
@@ -701,6 +708,69 @@ namespace MGPG
             this.BossCheckList.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.BossCheckList_ItemCheck);
             this.BossCheckList.SelectedIndexChanged += new System.EventHandler(this.BossCheckList_SelectedIndexChanged);
             // 
+            // UnknownsTab
+            // 
+            this.UnknownsTab.Controls.Add(this.word5letter1bit3);
+            this.UnknownsTab.Controls.Add(this.unk_DrainHP);
+            this.UnknownsTab.Controls.Add(this.word2letter5bit1);
+            this.UnknownsTab.Controls.Add(this.word2letter1bit5);
+            this.UnknownsTab.Location = new System.Drawing.Point(4, 22);
+            this.UnknownsTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.UnknownsTab.Name = "UnknownsTab";
+            this.UnknownsTab.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.UnknownsTab.Size = new System.Drawing.Size(492, 229);
+            this.UnknownsTab.TabIndex = 2;
+            this.UnknownsTab.Text = "Unknowns";
+            this.UnknownsTab.UseVisualStyleBackColor = true;
+            // 
+            // word5letter1bit3
+            // 
+            this.word5letter1bit3.AutoSize = true;
+            this.word5letter1bit3.Location = new System.Drawing.Point(6, 68);
+            this.word5letter1bit3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.word5letter1bit3.Name = "word5letter1bit3";
+            this.word5letter1bit3.Size = new System.Drawing.Size(130, 17);
+            this.word5letter1bit3.TabIndex = 3;
+            this.word5letter1bit3.Text = "Word 5, Letter 1, Bit 3";
+            this.word5letter1bit3.UseVisualStyleBackColor = true;
+            this.word5letter1bit3.CheckedChanged += new System.EventHandler(this.word5letter1bit3_CheckedChanged);
+            // 
+            // unk_DrainHP
+            // 
+            this.unk_DrainHP.AutoSize = true;
+            this.unk_DrainHP.Location = new System.Drawing.Point(6, 47);
+            this.unk_DrainHP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.unk_DrainHP.Name = "unk_DrainHP";
+            this.unk_DrainHP.Size = new System.Drawing.Size(110, 17);
+            this.unk_DrainHP.TabIndex = 2;
+            this.unk_DrainHP.Text = "Drain Snake\'s HP";
+            this.unk_DrainHP.UseVisualStyleBackColor = true;
+            this.unk_DrainHP.CheckedChanged += new System.EventHandler(this.unk_DrainHP_CheckedChanged);
+            // 
+            // word2letter5bit1
+            // 
+            this.word2letter5bit1.AutoSize = true;
+            this.word2letter5bit1.Location = new System.Drawing.Point(6, 26);
+            this.word2letter5bit1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.word2letter5bit1.Name = "word2letter5bit1";
+            this.word2letter5bit1.Size = new System.Drawing.Size(130, 17);
+            this.word2letter5bit1.TabIndex = 1;
+            this.word2letter5bit1.Text = "Word 2, Letter 5, Bit 1";
+            this.word2letter5bit1.UseVisualStyleBackColor = true;
+            this.word2letter5bit1.CheckedChanged += new System.EventHandler(this.word2letter5bit1_CheckedChanged);
+            // 
+            // word2letter1bit5
+            // 
+            this.word2letter1bit5.AutoSize = true;
+            this.word2letter1bit5.Location = new System.Drawing.Point(6, 5);
+            this.word2letter1bit5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.word2letter1bit5.Name = "word2letter1bit5";
+            this.word2letter1bit5.Size = new System.Drawing.Size(130, 17);
+            this.word2letter1bit5.TabIndex = 0;
+            this.word2letter1bit5.Text = "Word 2, Letter 1, Bit 5";
+            this.word2letter1bit5.UseVisualStyleBackColor = true;
+            this.word2letter1bit5.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // PasswordTextBox
             // 
             this.PasswordTextBox.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -772,6 +842,8 @@ namespace MGPG
             this.SpecialEventsBox.ResumeLayout(false);
             this.SpecialEventsBox.PerformLayout();
             this.BossBox.ResumeLayout(false);
+            this.UnknownsTab.ResumeLayout(false);
+            this.UnknownsTab.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -822,6 +894,11 @@ namespace MGPG
         private System.Windows.Forms.TextBox PasswordTextBox;
         private System.Windows.Forms.Button GenerateButton;
         private System.Windows.Forms.CheckBox AutogenButton;
+        private System.Windows.Forms.TabPage UnknownsTab;
+        private System.Windows.Forms.CheckBox word2letter1bit5;
+        private System.Windows.Forms.CheckBox word5letter1bit3;
+        private System.Windows.Forms.CheckBox unk_DrainHP;
+        private System.Windows.Forms.CheckBox word2letter5bit1;
     }
 }
 

@@ -9,7 +9,6 @@ namespace MGPG
         {
             rank = 1;
             equipment.cigarettes = true;
-            GeneratePassword();
         }
 
         #region Equipment
@@ -142,6 +141,20 @@ namespace MGPG
         }
 
         public Events events = new Events();
+        #endregion
+
+        #region Unknowns
+
+        public struct Unknowns
+        {
+            public bool word2letter1bit5;
+            public bool word2letter5bit1;
+            public bool unk_DrainHP;
+            public bool word5letter1bit3;
+        }
+
+        public Unknowns unknowns = new Unknowns();
+
         #endregion
 
         #region Character Conversion
@@ -365,6 +378,7 @@ namespace MGPG
             table[word * 5 + 0] += prisoners[11] == true ? 8 : 0;
             table[word * 5 + 0] += prisoners[12] == true ? 4 : 0;
             table[word * 5 + 0] += prisoners[13] == true ? 2 : 0;
+            table[word * 5 + 0] += unknowns.word2letter1bit5 == true ? 1 : 0;
             //character 2
             table[word * 5 + 1] += equipment.card5 == true ? 16 : 0;
             table[word * 5 + 1] += equipment.card4 == true ? 8 : 0;
@@ -384,6 +398,7 @@ namespace MGPG
             table[word * 5 + 3] += equipment.armor == true ? 2 : 0;
             table[word * 5 + 3] += equipment.detector == true ? 1 : 0;
             //character 5
+            table[word * 5 + 4] += unknowns.word2letter5bit1 == true ? 16 : 0;
             table[word * 5 + 4] += equipment.rations;
             word++;
 
@@ -425,6 +440,8 @@ namespace MGPG
             //word 5
             //character 1
             table[word * 5 + 0] += events.captured == true ? 16 : 0;
+            table[word * 5 + 0] += unknowns.unk_DrainHP == true ? 8 : 0;
+            table[word * 5 + 0] += unknowns.word5letter1bit3 == true ? 4 : 0;
             table[word * 5 + 0] += prisoners[14] == true ? 2 : 0;
             table[word * 5 + 0] += prisoners[15] == true ? 1 : 0;
             //character 2

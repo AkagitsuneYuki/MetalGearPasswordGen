@@ -78,6 +78,7 @@ namespace MGPG
             this.PasswordTextBox = new System.Windows.Forms.TextBox();
             this.GenerateButton = new System.Windows.Forms.Button();
             this.AutogenButton = new System.Windows.Forms.CheckBox();
+            this.UnknownsDescription = new System.Windows.Forms.TextBox();
             this.DataTabs.SuspendLayout();
             this.ItemsTab.SuspendLayout();
             this.EquipmentBox.SuspendLayout();
@@ -710,6 +711,7 @@ namespace MGPG
             // 
             // UnknownsTab
             // 
+            this.UnknownsTab.Controls.Add(this.UnknownsDescription);
             this.UnknownsTab.Controls.Add(this.word5letter1bit3);
             this.UnknownsTab.Controls.Add(this.unk_DrainHP);
             this.UnknownsTab.Controls.Add(this.word2letter5bit1);
@@ -805,6 +807,20 @@ namespace MGPG
             this.AutogenButton.UseVisualStyleBackColor = true;
             this.AutogenButton.CheckedChanged += new System.EventHandler(this.AutogenButton_CheckedChanged);
             // 
+            // UnknownsDescription
+            // 
+            this.UnknownsDescription.BackColor = System.Drawing.SystemColors.Window;
+            this.UnknownsDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.UnknownsDescription.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.UnknownsDescription.Location = new System.Drawing.Point(8, 90);
+            this.UnknownsDescription.Multiline = true;
+            this.UnknownsDescription.Name = "UnknownsDescription";
+            this.UnknownsDescription.ReadOnly = true;
+            this.UnknownsDescription.Size = new System.Drawing.Size(189, 80);
+            this.UnknownsDescription.TabIndex = 4;
+            this.UnknownsDescription.Text = "These bits either serve no purpose or haven\'t been decoded yet. Toggling them wil" +
+    "l produce a valid password, but what they do is still unknown.";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -899,6 +915,7 @@ namespace MGPG
         private System.Windows.Forms.CheckBox word5letter1bit3;
         private System.Windows.Forms.CheckBox unk_DrainHP;
         private System.Windows.Forms.CheckBox word2letter5bit1;
+        private System.Windows.Forms.TextBox UnknownsDescription;
     }
 }
 

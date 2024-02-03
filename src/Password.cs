@@ -481,11 +481,12 @@ namespace MGPG
         /// <summary>
         /// Takes an integer array and returns its checksum.
         /// </summary>
-        /// <param name="table"></param>
+        /// <param name="table">The password table</param>
         /// <returns>Returns an integer between 0 and 31, inclusive.</returns>
         private int Checksum(int[] table)
         {
-            int sum = 0;
+            //the sum is initialized to 7 in the game's code
+            int sum = 7;
 
             //sum up all of the letters in the table
             foreach (int letter in table)
@@ -493,19 +494,43 @@ namespace MGPG
                 sum += letter;
             }
 
-            //add 1, 2, or nothing if these rules are set
+            //simulate the carry flag getting added
+            //add 1 or 2 if these rules are set
             if (sum > 252)
             {
                 sum += sum > 507 ? 2 : 1;
             }
-            //7 is always added regardless
-            sum += 7;
 
-            //subtract 32 from the sum until it's less than 32
-            while (sum >= 32)
+            //and the sum with 31 (0x1F)
+            sum &= 31;
+
+            return sum;
+        }
+
+        /// <summary>
+        /// A more accurate reimplementation of the checksum.
+        /// </summary>
+        /// <param name="table"></param>
+        /// <returns></returns>
+        private int AccurateChecksum(int[] table)
+        {
+            int sum = 7;
+            int carry = 0;  //simulate the carry flag
+
+            for(int letter = 23; letter >= 0; letter--)
             {
-                sum -= 32;
+                //add with carry
+                sum += table[letter] + carry;
+
+                //set the carry flag if the sum goes over 255 (0xFF)
+                carry = (sum & 0x100) == 0x100 ? 1 : 0;
+
+                //truncate sum to one byte
+                sum &= 0xFF;
             }
+
+            //and sum with 0x1F (31)
+            sum &= 0x1F;
 
             return sum;
         }

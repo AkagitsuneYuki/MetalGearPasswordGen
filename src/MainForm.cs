@@ -414,36 +414,49 @@ namespace MGPG
 
         #region Unknowns
 
+        //Fake Pettrovich
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            password.unknowns.word2letter1bit5 = word2letter1bit5.Checked;
+            //password.unknowns.word2letter1bit5 = word2letter1bit5.Checked;
+            password.fakePettrovich = word2letter1bit5.Checked;
             if (autoGenerate)
             {
                 SetPasswordText();
             }
         }
 
+        //Dummy Rations
         private void word2letter5bit1_CheckedChanged(object sender, EventArgs e)
         {
-            password.unknowns.word2letter5bit1 = word2letter5bit1.Checked;
+            //password.unknowns.word2letter5bit1 = word2letter5bit1.Checked;
+            password.equipment.dummyRations = word2letter5bit1.Checked;
             if (autoGenerate)
             {
                 SetPasswordText();
             }
         }
 
+        private void word2letter5bit1_MouseHover(object sender, MouseEventArgs e)
+        {
+            dummyRationToolTip.Show("test",word2letter5bit1);
+        }
+
+        //Poisoned
         private void unk_DrainHP_CheckedChanged(object sender, EventArgs e)
         {
-            password.unknowns.unk_DrainHP = unk_DrainHP.Checked;
+            //password.unknowns.unk_DrainHP = unk_DrainHP.Checked;
+            password.events.poisoned = unk_DrainHP.Checked;
             if (autoGenerate)
             {
                 SetPasswordText();
             }
         }
 
+        //Unknown Prisoner
         private void word5letter1bit3_CheckedChanged(object sender, EventArgs e)
         {
-            password.unknowns.word5letter1bit3 = word5letter1bit3.Checked;
+            //password.unknowns.word5letter1bit3 = word5letter1bit3.Checked;
+            password.unknownPrisoner = word5letter1bit3.Checked;
             if (autoGenerate)
             {
                 SetPasswordText();

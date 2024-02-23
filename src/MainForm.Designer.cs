@@ -30,6 +30,7 @@ namespace MGPG
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.DataTabs = new System.Windows.Forms.TabControl();
             this.ItemsTab = new System.Windows.Forms.TabPage();
@@ -64,6 +65,7 @@ namespace MGPG
             this.Rank3Button = new System.Windows.Forms.RadioButton();
             this.EventsTab = new System.Windows.Forms.TabPage();
             this.PrisonersBox = new System.Windows.Forms.GroupBox();
+            this.word2letter1bit5 = new System.Windows.Forms.CheckBox();
             this.PrisonerCheckList = new System.Windows.Forms.CheckedListBox();
             this.SpecialEventsBox = new System.Windows.Forms.GroupBox();
             this.RecoverGearCheckBox = new System.Windows.Forms.CheckBox();
@@ -71,14 +73,14 @@ namespace MGPG
             this.BossBox = new System.Windows.Forms.GroupBox();
             this.BossCheckList = new System.Windows.Forms.CheckedListBox();
             this.UnknownsTab = new System.Windows.Forms.TabPage();
+            this.UnknownsDescription = new System.Windows.Forms.TextBox();
             this.word5letter1bit3 = new System.Windows.Forms.CheckBox();
             this.unk_DrainHP = new System.Windows.Forms.CheckBox();
-            this.word2letter5bit1 = new System.Windows.Forms.CheckBox();
-            this.word2letter1bit5 = new System.Windows.Forms.CheckBox();
             this.PasswordTextBox = new System.Windows.Forms.TextBox();
             this.GenerateButton = new System.Windows.Forms.Button();
             this.AutogenButton = new System.Windows.Forms.CheckBox();
-            this.UnknownsDescription = new System.Windows.Forms.TextBox();
+            this.word2letter5bit1 = new System.Windows.Forms.CheckBox();
+            this.dummyRationToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.DataTabs.SuspendLayout();
             this.ItemsTab.SuspendLayout();
             this.EquipmentBox.SuspendLayout();
@@ -127,6 +129,7 @@ namespace MGPG
             // 
             // EquipmentBox
             // 
+            this.EquipmentBox.Controls.Add(this.word2letter5bit1);
             this.EquipmentBox.Controls.Add(this.RationsCounterBox);
             this.EquipmentBox.Controls.Add(this.RationsCheckBox);
             this.EquipmentBox.Controls.Add(this.EquipmentCheckListC);
@@ -595,6 +598,7 @@ namespace MGPG
             // 
             // PrisonersBox
             // 
+            this.PrisonersBox.Controls.Add(this.word2letter1bit5);
             this.PrisonersBox.Controls.Add(this.PrisonerCheckList);
             this.PrisonersBox.Location = new System.Drawing.Point(130, 4);
             this.PrisonersBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -603,6 +607,17 @@ namespace MGPG
             this.PrisonersBox.TabIndex = 2;
             this.PrisonersBox.TabStop = false;
             this.PrisonersBox.Text = "Prisoners Rescued";
+            // 
+            // word2letter1bit5
+            // 
+            this.word2letter1bit5.AutoSize = true;
+            this.word2letter1bit5.Location = new System.Drawing.Point(3, 145);
+            this.word2letter1bit5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.word2letter1bit5.Name = "word2letter1bit5";
+            this.word2letter1bit5.Size = new System.Drawing.Size(118, 17);
+            this.word2letter1bit5.TabIndex = 1;
+            this.word2letter1bit5.Text = "Fake Dr. Pettrovich";
+            this.word2letter1bit5.UseVisualStyleBackColor = true;
             // 
             // PrisonerCheckList
             // 
@@ -636,7 +651,7 @@ namespace MGPG
             this.PrisonerCheckList.Location = new System.Drawing.Point(2, 20);
             this.PrisonerCheckList.MultiColumn = true;
             this.PrisonerCheckList.Name = "PrisonerCheckList";
-            this.PrisonerCheckList.Size = new System.Drawing.Size(306, 135);
+            this.PrisonerCheckList.Size = new System.Drawing.Size(306, 120);
             this.PrisonerCheckList.TabIndex = 0;
             this.PrisonerCheckList.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.PrisonerCheckList_ItemCheck);
             this.PrisonerCheckList.SelectedIndexChanged += new System.EventHandler(this.PrisonerCheckList_SelectedIndexChanged);
@@ -714,8 +729,6 @@ namespace MGPG
             this.UnknownsTab.Controls.Add(this.UnknownsDescription);
             this.UnknownsTab.Controls.Add(this.word5letter1bit3);
             this.UnknownsTab.Controls.Add(this.unk_DrainHP);
-            this.UnknownsTab.Controls.Add(this.word2letter5bit1);
-            this.UnknownsTab.Controls.Add(this.word2letter1bit5);
             this.UnknownsTab.Location = new System.Drawing.Point(4, 22);
             this.UnknownsTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.UnknownsTab.Name = "UnknownsTab";
@@ -724,6 +737,20 @@ namespace MGPG
             this.UnknownsTab.TabIndex = 2;
             this.UnknownsTab.Text = "Unknowns";
             this.UnknownsTab.UseVisualStyleBackColor = true;
+            // 
+            // UnknownsDescription
+            // 
+            this.UnknownsDescription.BackColor = System.Drawing.SystemColors.Window;
+            this.UnknownsDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.UnknownsDescription.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.UnknownsDescription.Location = new System.Drawing.Point(8, 90);
+            this.UnknownsDescription.Multiline = true;
+            this.UnknownsDescription.Name = "UnknownsDescription";
+            this.UnknownsDescription.ReadOnly = true;
+            this.UnknownsDescription.Size = new System.Drawing.Size(189, 80);
+            this.UnknownsDescription.TabIndex = 4;
+            this.UnknownsDescription.Text = "These bits either serve no purpose or haven\'t been decoded yet. Toggling them wil" +
+    "l produce a valid password, but what they do is still unknown.";
             // 
             // word5letter1bit3
             // 
@@ -748,30 +775,6 @@ namespace MGPG
             this.unk_DrainHP.Text = "Drain Snake\'s HP";
             this.unk_DrainHP.UseVisualStyleBackColor = true;
             this.unk_DrainHP.CheckedChanged += new System.EventHandler(this.unk_DrainHP_CheckedChanged);
-            // 
-            // word2letter5bit1
-            // 
-            this.word2letter5bit1.AutoSize = true;
-            this.word2letter5bit1.Location = new System.Drawing.Point(6, 26);
-            this.word2letter5bit1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.word2letter5bit1.Name = "word2letter5bit1";
-            this.word2letter5bit1.Size = new System.Drawing.Size(130, 17);
-            this.word2letter5bit1.TabIndex = 1;
-            this.word2letter5bit1.Text = "Word 2, Letter 5, Bit 1";
-            this.word2letter5bit1.UseVisualStyleBackColor = true;
-            this.word2letter5bit1.CheckedChanged += new System.EventHandler(this.word2letter5bit1_CheckedChanged);
-            // 
-            // word2letter1bit5
-            // 
-            this.word2letter1bit5.AutoSize = true;
-            this.word2letter1bit5.Location = new System.Drawing.Point(6, 5);
-            this.word2letter1bit5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.word2letter1bit5.Name = "word2letter1bit5";
-            this.word2letter1bit5.Size = new System.Drawing.Size(130, 17);
-            this.word2letter1bit5.TabIndex = 0;
-            this.word2letter1bit5.Text = "Word 2, Letter 1, Bit 5";
-            this.word2letter1bit5.UseVisualStyleBackColor = true;
-            this.word2letter1bit5.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // PasswordTextBox
             // 
@@ -807,19 +810,16 @@ namespace MGPG
             this.AutogenButton.UseVisualStyleBackColor = true;
             this.AutogenButton.CheckedChanged += new System.EventHandler(this.AutogenButton_CheckedChanged);
             // 
-            // UnknownsDescription
+            // word2letter5bit1
             // 
-            this.UnknownsDescription.BackColor = System.Drawing.SystemColors.Window;
-            this.UnknownsDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.UnknownsDescription.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.UnknownsDescription.Location = new System.Drawing.Point(8, 90);
-            this.UnknownsDescription.Multiline = true;
-            this.UnknownsDescription.Name = "UnknownsDescription";
-            this.UnknownsDescription.ReadOnly = true;
-            this.UnknownsDescription.Size = new System.Drawing.Size(189, 80);
-            this.UnknownsDescription.TabIndex = 4;
-            this.UnknownsDescription.Text = "These bits either serve no purpose or haven\'t been decoded yet. Toggling them wil" +
-    "l produce a valid password, but what they do is still unknown.";
+            this.word2letter5bit1.AutoSize = true;
+            this.word2letter5bit1.Location = new System.Drawing.Point(148, 132);
+            this.word2letter5bit1.Margin = new System.Windows.Forms.Padding(2);
+            this.word2letter5bit1.Name = "word2letter5bit1";
+            this.word2letter5bit1.Size = new System.Drawing.Size(100, 17);
+            this.word2letter5bit1.TabIndex = 5;
+            this.word2letter5bit1.Text = "Dummy Rations";
+            this.word2letter5bit1.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -855,6 +855,7 @@ namespace MGPG
             this.RankBox.PerformLayout();
             this.EventsTab.ResumeLayout(false);
             this.PrisonersBox.ResumeLayout(false);
+            this.PrisonersBox.PerformLayout();
             this.SpecialEventsBox.ResumeLayout(false);
             this.SpecialEventsBox.PerformLayout();
             this.BossBox.ResumeLayout(false);
@@ -911,11 +912,12 @@ namespace MGPG
         private System.Windows.Forms.Button GenerateButton;
         private System.Windows.Forms.CheckBox AutogenButton;
         private System.Windows.Forms.TabPage UnknownsTab;
-        private System.Windows.Forms.CheckBox word2letter1bit5;
         private System.Windows.Forms.CheckBox word5letter1bit3;
         private System.Windows.Forms.CheckBox unk_DrainHP;
-        private System.Windows.Forms.CheckBox word2letter5bit1;
         private System.Windows.Forms.TextBox UnknownsDescription;
+        private System.Windows.Forms.CheckBox word2letter1bit5;
+        private System.Windows.Forms.CheckBox word2letter5bit1;
+        private System.Windows.Forms.ToolTip dummyRationToolTip;
     }
 }
 

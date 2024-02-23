@@ -39,6 +39,7 @@ namespace MGPG
             public bool oxygen;
             public bool transmitter;
             public bool ration;
+            public bool dummyRations;
             public int rations;
         }
 
@@ -130,6 +131,8 @@ namespace MGPG
         #region Prisoners
 
         public bool[] prisoners = new bool[22];
+        public bool fakePettrovich;
+        public bool unknownPrisoner;
 
         #endregion
 
@@ -138,23 +141,10 @@ namespace MGPG
         {
             public bool captured;
             public bool recovered;
+            public bool poisoned;
         }
 
         public Events events = new Events();
-        #endregion
-
-        #region Unknowns
-
-        public struct Unknowns
-        {
-            public bool word2letter1bit5;
-            public bool word2letter5bit1;
-            public bool unk_DrainHP;
-            public bool word5letter1bit3;
-        }
-
-        public Unknowns unknowns = new Unknowns();
-
         #endregion
 
         #region Character Conversion
@@ -333,7 +323,7 @@ namespace MGPG
         /// <summary>
         /// Generates a password based on the selected data.
         /// </summary>
-        /// <returns>Returns a valid password.</returns>
+        /// <returns>A valid password.</returns>
         public string GeneratePassword()
         {
             string output = "";
@@ -378,7 +368,7 @@ namespace MGPG
             table[word * 5 + 0] += prisoners[11] == true ? 8 : 0;
             table[word * 5 + 0] += prisoners[12] == true ? 4 : 0;
             table[word * 5 + 0] += prisoners[13] == true ? 2 : 0;
-            table[word * 5 + 0] += unknowns.word2letter1bit5 == true ? 1 : 0;
+            table[word * 5 + 0] += fakePettrovich == true ? 1 : 0;
             //character 2
             table[word * 5 + 1] += equipment.card5 == true ? 16 : 0;
             table[word * 5 + 1] += equipment.card4 == true ? 8 : 0;
@@ -398,7 +388,7 @@ namespace MGPG
             table[word * 5 + 3] += equipment.armor == true ? 2 : 0;
             table[word * 5 + 3] += equipment.detector == true ? 1 : 0;
             //character 5
-            table[word * 5 + 4] += unknowns.word2letter5bit1 == true ? 16 : 0;
+            table[word * 5 + 4] += equipment.dummyRations == true ? 16 : 0;
             table[word * 5 + 4] += equipment.rations;
             word++;
 
@@ -440,8 +430,8 @@ namespace MGPG
             //word 5
             //character 1
             table[word * 5 + 0] += events.captured == true ? 16 : 0;
-            table[word * 5 + 0] += unknowns.unk_DrainHP == true ? 8 : 0;
-            table[word * 5 + 0] += unknowns.word5letter1bit3 == true ? 4 : 0;
+            table[word * 5 + 0] += events.poisoned == true ? 8 : 0;
+            table[word * 5 + 0] += unknownPrisoner == true ? 4 : 0;
             table[word * 5 + 0] += prisoners[14] == true ? 2 : 0;
             table[word * 5 + 0] += prisoners[15] == true ? 1 : 0;
             //character 2
@@ -473,7 +463,7 @@ namespace MGPG
                 output += BitsToDigit(table[letter]);
             }
             //add the checksum digit
-            output += BitsToDigit(Checksum(table));
+            output += BitsToDigit(AccurateChecksum(table));
 
             return output;
         }
@@ -523,7 +513,7 @@ namespace MGPG
                 sum += table[letter] + carry;
 
                 //set the carry flag if the sum goes over 255 (0xFF)
-                carry = (sum & 0x100) == 0x100 ? 1 : 0;
+                carry = (sum > 0xFF) ? 1 : 0;
 
                 //truncate sum to one byte
                 sum &= 0xFF;

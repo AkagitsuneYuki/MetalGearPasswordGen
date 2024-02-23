@@ -436,11 +436,6 @@ namespace MGPG
             }
         }
 
-        private void word2letter5bit1_MouseHover(object sender, MouseEventArgs e)
-        {
-            dummyRationToolTip.Show("test",word2letter5bit1);
-        }
-
         //Poisoned
         private void unk_DrainHP_CheckedChanged(object sender, EventArgs e)
         {

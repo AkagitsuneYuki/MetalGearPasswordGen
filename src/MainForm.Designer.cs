@@ -35,6 +35,7 @@ namespace MGPG
             this.DataTabs = new System.Windows.Forms.TabControl();
             this.ItemsTab = new System.Windows.Forms.TabPage();
             this.EquipmentBox = new System.Windows.Forms.GroupBox();
+            this.word2letter5bit1 = new System.Windows.Forms.CheckBox();
             this.RationsCounterBox = new System.Windows.Forms.NumericUpDown();
             this.RationsCheckBox = new System.Windows.Forms.CheckBox();
             this.EquipmentCheckListC = new System.Windows.Forms.CheckedListBox();
@@ -65,22 +66,19 @@ namespace MGPG
             this.Rank3Button = new System.Windows.Forms.RadioButton();
             this.EventsTab = new System.Windows.Forms.TabPage();
             this.PrisonersBox = new System.Windows.Forms.GroupBox();
+            this.word5letter1bit3 = new System.Windows.Forms.CheckBox();
             this.word2letter1bit5 = new System.Windows.Forms.CheckBox();
             this.PrisonerCheckList = new System.Windows.Forms.CheckedListBox();
             this.SpecialEventsBox = new System.Windows.Forms.GroupBox();
+            this.unk_DrainHP = new System.Windows.Forms.CheckBox();
             this.RecoverGearCheckBox = new System.Windows.Forms.CheckBox();
             this.CapturedCheckBox = new System.Windows.Forms.CheckBox();
             this.BossBox = new System.Windows.Forms.GroupBox();
             this.BossCheckList = new System.Windows.Forms.CheckedListBox();
-            this.UnknownsTab = new System.Windows.Forms.TabPage();
-            this.UnknownsDescription = new System.Windows.Forms.TextBox();
-            this.word5letter1bit3 = new System.Windows.Forms.CheckBox();
-            this.unk_DrainHP = new System.Windows.Forms.CheckBox();
             this.PasswordTextBox = new System.Windows.Forms.TextBox();
             this.GenerateButton = new System.Windows.Forms.Button();
             this.AutogenButton = new System.Windows.Forms.CheckBox();
-            this.word2letter5bit1 = new System.Windows.Forms.CheckBox();
-            this.dummyRationToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.DataTabs.SuspendLayout();
             this.ItemsTab.SuspendLayout();
             this.EquipmentBox.SuspendLayout();
@@ -98,14 +96,12 @@ namespace MGPG
             this.PrisonersBox.SuspendLayout();
             this.SpecialEventsBox.SuspendLayout();
             this.BossBox.SuspendLayout();
-            this.UnknownsTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // DataTabs
             // 
             this.DataTabs.Controls.Add(this.ItemsTab);
             this.DataTabs.Controls.Add(this.EventsTab);
-            this.DataTabs.Controls.Add(this.UnknownsTab);
             this.DataTabs.Location = new System.Drawing.Point(0, 0);
             this.DataTabs.Margin = new System.Windows.Forms.Padding(0);
             this.DataTabs.Name = "DataTabs";
@@ -119,9 +115,9 @@ namespace MGPG
             this.ItemsTab.Controls.Add(this.WeaponsBox);
             this.ItemsTab.Controls.Add(this.RankBox);
             this.ItemsTab.Location = new System.Drawing.Point(4, 22);
-            this.ItemsTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ItemsTab.Margin = new System.Windows.Forms.Padding(2);
             this.ItemsTab.Name = "ItemsTab";
-            this.ItemsTab.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ItemsTab.Padding = new System.Windows.Forms.Padding(2);
             this.ItemsTab.Size = new System.Drawing.Size(492, 229);
             this.ItemsTab.TabIndex = 0;
             this.ItemsTab.Text = "Snake";
@@ -141,6 +137,19 @@ namespace MGPG
             this.EquipmentBox.TabIndex = 6;
             this.EquipmentBox.TabStop = false;
             this.EquipmentBox.Text = "Equipment";
+            // 
+            // word2letter5bit1
+            // 
+            this.word2letter5bit1.AutoSize = true;
+            this.word2letter5bit1.Location = new System.Drawing.Point(148, 132);
+            this.word2letter5bit1.Margin = new System.Windows.Forms.Padding(2);
+            this.word2letter5bit1.Name = "word2letter5bit1";
+            this.word2letter5bit1.Size = new System.Drawing.Size(100, 17);
+            this.word2letter5bit1.TabIndex = 5;
+            this.word2letter5bit1.Text = "Dummy Rations";
+            this.toolTip.SetToolTip(this.word2letter5bit1, "Possibly a +16 rations flag, although it gets cleared when rations are obtained.");
+            this.word2letter5bit1.UseVisualStyleBackColor = true;
+            this.word2letter5bit1.CheckedChanged += new System.EventHandler(this.word2letter5bit1_CheckedChanged);
             // 
             // RationsCounterBox
             // 
@@ -260,9 +269,9 @@ namespace MGPG
             this.WeaponsBox.Controls.Add(this.HandGunRoundsBox);
             this.WeaponsBox.Controls.Add(this.HandGunBox);
             this.WeaponsBox.Location = new System.Drawing.Point(62, 5);
-            this.WeaponsBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.WeaponsBox.Margin = new System.Windows.Forms.Padding(2);
             this.WeaponsBox.Name = "WeaponsBox";
-            this.WeaponsBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.WeaponsBox.Padding = new System.Windows.Forms.Padding(2);
             this.WeaponsBox.Size = new System.Drawing.Size(166, 215);
             this.WeaponsBox.TabIndex = 5;
             this.WeaponsBox.TabStop = false;
@@ -293,7 +302,7 @@ namespace MGPG
             // 
             this.RocketCountBox.Enabled = false;
             this.RocketCountBox.Location = new System.Drawing.Point(115, 169);
-            this.RocketCountBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RocketCountBox.Margin = new System.Windows.Forms.Padding(2);
             this.RocketCountBox.Maximum = new decimal(new int[] {
             30,
             0,
@@ -313,7 +322,7 @@ namespace MGPG
             // 
             this.GrenadeCountBox.Enabled = false;
             this.GrenadeCountBox.Location = new System.Drawing.Point(115, 145);
-            this.GrenadeCountBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GrenadeCountBox.Margin = new System.Windows.Forms.Padding(2);
             this.GrenadeCountBox.Maximum = new decimal(new int[] {
             90,
             0,
@@ -333,7 +342,7 @@ namespace MGPG
             // 
             this.MachineGunCountBox.Enabled = false;
             this.MachineGunCountBox.Location = new System.Drawing.Point(115, 123);
-            this.MachineGunCountBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MachineGunCountBox.Margin = new System.Windows.Forms.Padding(2);
             this.MachineGunCountBox.Maximum = new decimal(new int[] {
             255,
             0,
@@ -353,7 +362,7 @@ namespace MGPG
             // 
             this.MissilesCountBox.Enabled = false;
             this.MissilesCountBox.Location = new System.Drawing.Point(115, 99);
-            this.MissilesCountBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MissilesCountBox.Margin = new System.Windows.Forms.Padding(2);
             this.MissilesCountBox.Maximum = new decimal(new int[] {
             20,
             0,
@@ -373,7 +382,7 @@ namespace MGPG
             // 
             this.ExplosivesCountBox.Enabled = false;
             this.ExplosivesCountBox.Location = new System.Drawing.Point(115, 77);
-            this.ExplosivesCountBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ExplosivesCountBox.Margin = new System.Windows.Forms.Padding(2);
             this.ExplosivesCountBox.Maximum = new decimal(new int[] {
             20,
             0,
@@ -393,7 +402,7 @@ namespace MGPG
             // 
             this.MinesCountBox.Enabled = false;
             this.MinesCountBox.Location = new System.Drawing.Point(115, 53);
-            this.MinesCountBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MinesCountBox.Margin = new System.Windows.Forms.Padding(2);
             this.MinesCountBox.Maximum = new decimal(new int[] {
             20,
             0,
@@ -490,7 +499,7 @@ namespace MGPG
             // 
             this.HandGunRoundsBox.Enabled = false;
             this.HandGunRoundsBox.Location = new System.Drawing.Point(115, 30);
-            this.HandGunRoundsBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.HandGunRoundsBox.Margin = new System.Windows.Forms.Padding(2);
             this.HandGunRoundsBox.Maximum = new decimal(new int[] {
             255,
             0,
@@ -524,9 +533,9 @@ namespace MGPG
             this.RankBox.Controls.Add(this.Rank2Button);
             this.RankBox.Controls.Add(this.Rank3Button);
             this.RankBox.Location = new System.Drawing.Point(6, 5);
-            this.RankBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RankBox.Margin = new System.Windows.Forms.Padding(2);
             this.RankBox.Name = "RankBox";
-            this.RankBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RankBox.Padding = new System.Windows.Forms.Padding(2);
             this.RankBox.Size = new System.Drawing.Size(52, 107);
             this.RankBox.TabIndex = 4;
             this.RankBox.TabStop = false;
@@ -537,7 +546,7 @@ namespace MGPG
             this.Rank1Button.AutoSize = true;
             this.Rank1Button.Checked = true;
             this.Rank1Button.Location = new System.Drawing.Point(4, 17);
-            this.Rank1Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Rank1Button.Margin = new System.Windows.Forms.Padding(2);
             this.Rank1Button.Name = "Rank1Button";
             this.Rank1Button.Size = new System.Drawing.Size(29, 17);
             this.Rank1Button.TabIndex = 0;
@@ -550,7 +559,7 @@ namespace MGPG
             // 
             this.Rank4Button.AutoSize = true;
             this.Rank4Button.Location = new System.Drawing.Point(4, 83);
-            this.Rank4Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Rank4Button.Margin = new System.Windows.Forms.Padding(2);
             this.Rank4Button.Name = "Rank4Button";
             this.Rank4Button.Size = new System.Drawing.Size(41, 17);
             this.Rank4Button.TabIndex = 3;
@@ -562,7 +571,7 @@ namespace MGPG
             // 
             this.Rank2Button.AutoSize = true;
             this.Rank2Button.Location = new System.Drawing.Point(4, 39);
-            this.Rank2Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Rank2Button.Margin = new System.Windows.Forms.Padding(2);
             this.Rank2Button.Name = "Rank2Button";
             this.Rank2Button.Size = new System.Drawing.Size(33, 17);
             this.Rank2Button.TabIndex = 1;
@@ -574,7 +583,7 @@ namespace MGPG
             // 
             this.Rank3Button.AutoSize = true;
             this.Rank3Button.Location = new System.Drawing.Point(4, 61);
-            this.Rank3Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Rank3Button.Margin = new System.Windows.Forms.Padding(2);
             this.Rank3Button.Name = "Rank3Button";
             this.Rank3Button.Size = new System.Drawing.Size(37, 17);
             this.Rank3Button.TabIndex = 2;
@@ -588,9 +597,9 @@ namespace MGPG
             this.EventsTab.Controls.Add(this.SpecialEventsBox);
             this.EventsTab.Controls.Add(this.BossBox);
             this.EventsTab.Location = new System.Drawing.Point(4, 22);
-            this.EventsTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.EventsTab.Margin = new System.Windows.Forms.Padding(2);
             this.EventsTab.Name = "EventsTab";
-            this.EventsTab.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.EventsTab.Padding = new System.Windows.Forms.Padding(2);
             this.EventsTab.Size = new System.Drawing.Size(492, 229);
             this.EventsTab.TabIndex = 1;
             this.EventsTab.Text = "Events";
@@ -598,26 +607,42 @@ namespace MGPG
             // 
             // PrisonersBox
             // 
+            this.PrisonersBox.Controls.Add(this.word5letter1bit3);
             this.PrisonersBox.Controls.Add(this.word2letter1bit5);
             this.PrisonersBox.Controls.Add(this.PrisonerCheckList);
             this.PrisonersBox.Location = new System.Drawing.Point(130, 4);
-            this.PrisonersBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PrisonersBox.Margin = new System.Windows.Forms.Padding(2);
             this.PrisonersBox.Name = "PrisonersBox";
-            this.PrisonersBox.Size = new System.Drawing.Size(316, 177);
+            this.PrisonersBox.Size = new System.Drawing.Size(355, 177);
             this.PrisonersBox.TabIndex = 2;
             this.PrisonersBox.TabStop = false;
             this.PrisonersBox.Text = "Prisoners Rescued";
             // 
+            // word5letter1bit3
+            // 
+            this.word5letter1bit3.AutoSize = true;
+            this.word5letter1bit3.Location = new System.Drawing.Point(203, 120);
+            this.word5letter1bit3.Margin = new System.Windows.Forms.Padding(2);
+            this.word5letter1bit3.Name = "word5letter1bit3";
+            this.word5letter1bit3.Size = new System.Drawing.Size(113, 17);
+            this.word5letter1bit3.TabIndex = 4;
+            this.word5letter1bit3.Text = "Unknown Prisoner";
+            this.toolTip.SetToolTip(this.word5letter1bit3, "This prisoner counts for ranking up, but it\'s unknown if they can even be rescued" +
+        ".");
+            this.word5letter1bit3.UseVisualStyleBackColor = true;
+            this.word5letter1bit3.CheckedChanged += new System.EventHandler(this.word5letter1bit3_CheckedChanged);
+            // 
             // word2letter1bit5
             // 
             this.word2letter1bit5.AutoSize = true;
-            this.word2letter1bit5.Location = new System.Drawing.Point(3, 145);
-            this.word2letter1bit5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.word2letter1bit5.Location = new System.Drawing.Point(203, 99);
+            this.word2letter1bit5.Margin = new System.Windows.Forms.Padding(2);
             this.word2letter1bit5.Name = "word2letter1bit5";
             this.word2letter1bit5.Size = new System.Drawing.Size(118, 17);
             this.word2letter1bit5.TabIndex = 1;
             this.word2letter1bit5.Text = "Fake Dr. Pettrovich";
             this.word2letter1bit5.UseVisualStyleBackColor = true;
+            this.word2letter1bit5.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // PrisonerCheckList
             // 
@@ -651,22 +676,35 @@ namespace MGPG
             this.PrisonerCheckList.Location = new System.Drawing.Point(2, 20);
             this.PrisonerCheckList.MultiColumn = true;
             this.PrisonerCheckList.Name = "PrisonerCheckList";
-            this.PrisonerCheckList.Size = new System.Drawing.Size(306, 120);
+            this.PrisonerCheckList.Size = new System.Drawing.Size(306, 135);
             this.PrisonerCheckList.TabIndex = 0;
             this.PrisonerCheckList.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.PrisonerCheckList_ItemCheck);
             this.PrisonerCheckList.SelectedIndexChanged += new System.EventHandler(this.PrisonerCheckList_SelectedIndexChanged);
             // 
             // SpecialEventsBox
             // 
+            this.SpecialEventsBox.Controls.Add(this.unk_DrainHP);
             this.SpecialEventsBox.Controls.Add(this.RecoverGearCheckBox);
             this.SpecialEventsBox.Controls.Add(this.CapturedCheckBox);
             this.SpecialEventsBox.Location = new System.Drawing.Point(4, 185);
-            this.SpecialEventsBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SpecialEventsBox.Margin = new System.Windows.Forms.Padding(2);
             this.SpecialEventsBox.Name = "SpecialEventsBox";
-            this.SpecialEventsBox.Size = new System.Drawing.Size(442, 40);
+            this.SpecialEventsBox.Size = new System.Drawing.Size(481, 40);
             this.SpecialEventsBox.TabIndex = 1;
             this.SpecialEventsBox.TabStop = false;
             this.SpecialEventsBox.Text = "Special Events";
+            // 
+            // unk_DrainHP
+            // 
+            this.unk_DrainHP.AutoSize = true;
+            this.unk_DrainHP.Location = new System.Drawing.Point(282, 17);
+            this.unk_DrainHP.Margin = new System.Windows.Forms.Padding(2);
+            this.unk_DrainHP.Name = "unk_DrainHP";
+            this.unk_DrainHP.Size = new System.Drawing.Size(118, 17);
+            this.unk_DrainHP.TabIndex = 3;
+            this.unk_DrainHP.Text = "I\'ve been poisoined";
+            this.unk_DrainHP.UseVisualStyleBackColor = true;
+            this.unk_DrainHP.CheckedChanged += new System.EventHandler(this.unk_DrainHP_CheckedChanged);
             // 
             // RecoverGearCheckBox
             // 
@@ -694,7 +732,7 @@ namespace MGPG
             // 
             this.BossBox.Controls.Add(this.BossCheckList);
             this.BossBox.Location = new System.Drawing.Point(4, 4);
-            this.BossBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BossBox.Margin = new System.Windows.Forms.Padding(2);
             this.BossBox.Name = "BossBox";
             this.BossBox.Size = new System.Drawing.Size(122, 177);
             this.BossBox.TabIndex = 0;
@@ -723,58 +761,6 @@ namespace MGPG
             this.BossCheckList.TabIndex = 0;
             this.BossCheckList.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.BossCheckList_ItemCheck);
             this.BossCheckList.SelectedIndexChanged += new System.EventHandler(this.BossCheckList_SelectedIndexChanged);
-            // 
-            // UnknownsTab
-            // 
-            this.UnknownsTab.Controls.Add(this.UnknownsDescription);
-            this.UnknownsTab.Controls.Add(this.word5letter1bit3);
-            this.UnknownsTab.Controls.Add(this.unk_DrainHP);
-            this.UnknownsTab.Location = new System.Drawing.Point(4, 22);
-            this.UnknownsTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.UnknownsTab.Name = "UnknownsTab";
-            this.UnknownsTab.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.UnknownsTab.Size = new System.Drawing.Size(492, 229);
-            this.UnknownsTab.TabIndex = 2;
-            this.UnknownsTab.Text = "Unknowns";
-            this.UnknownsTab.UseVisualStyleBackColor = true;
-            // 
-            // UnknownsDescription
-            // 
-            this.UnknownsDescription.BackColor = System.Drawing.SystemColors.Window;
-            this.UnknownsDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.UnknownsDescription.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.UnknownsDescription.Location = new System.Drawing.Point(8, 90);
-            this.UnknownsDescription.Multiline = true;
-            this.UnknownsDescription.Name = "UnknownsDescription";
-            this.UnknownsDescription.ReadOnly = true;
-            this.UnknownsDescription.Size = new System.Drawing.Size(189, 80);
-            this.UnknownsDescription.TabIndex = 4;
-            this.UnknownsDescription.Text = "These bits either serve no purpose or haven\'t been decoded yet. Toggling them wil" +
-    "l produce a valid password, but what they do is still unknown.";
-            // 
-            // word5letter1bit3
-            // 
-            this.word5letter1bit3.AutoSize = true;
-            this.word5letter1bit3.Location = new System.Drawing.Point(6, 68);
-            this.word5letter1bit3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.word5letter1bit3.Name = "word5letter1bit3";
-            this.word5letter1bit3.Size = new System.Drawing.Size(130, 17);
-            this.word5letter1bit3.TabIndex = 3;
-            this.word5letter1bit3.Text = "Word 5, Letter 1, Bit 3";
-            this.word5letter1bit3.UseVisualStyleBackColor = true;
-            this.word5letter1bit3.CheckedChanged += new System.EventHandler(this.word5letter1bit3_CheckedChanged);
-            // 
-            // unk_DrainHP
-            // 
-            this.unk_DrainHP.AutoSize = true;
-            this.unk_DrainHP.Location = new System.Drawing.Point(6, 47);
-            this.unk_DrainHP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.unk_DrainHP.Name = "unk_DrainHP";
-            this.unk_DrainHP.Size = new System.Drawing.Size(110, 17);
-            this.unk_DrainHP.TabIndex = 2;
-            this.unk_DrainHP.Text = "Drain Snake\'s HP";
-            this.unk_DrainHP.UseVisualStyleBackColor = true;
-            this.unk_DrainHP.CheckedChanged += new System.EventHandler(this.unk_DrainHP_CheckedChanged);
             // 
             // PasswordTextBox
             // 
@@ -810,17 +796,6 @@ namespace MGPG
             this.AutogenButton.UseVisualStyleBackColor = true;
             this.AutogenButton.CheckedChanged += new System.EventHandler(this.AutogenButton_CheckedChanged);
             // 
-            // word2letter5bit1
-            // 
-            this.word2letter5bit1.AutoSize = true;
-            this.word2letter5bit1.Location = new System.Drawing.Point(148, 132);
-            this.word2letter5bit1.Margin = new System.Windows.Forms.Padding(2);
-            this.word2letter5bit1.Name = "word2letter5bit1";
-            this.word2letter5bit1.Size = new System.Drawing.Size(100, 17);
-            this.word2letter5bit1.TabIndex = 5;
-            this.word2letter5bit1.Text = "Dummy Rations";
-            this.word2letter5bit1.UseVisualStyleBackColor = true;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -832,7 +807,7 @@ namespace MGPG
             this.Controls.Add(this.DataTabs);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Metal Gear Password Generator";
@@ -859,8 +834,6 @@ namespace MGPG
             this.SpecialEventsBox.ResumeLayout(false);
             this.SpecialEventsBox.PerformLayout();
             this.BossBox.ResumeLayout(false);
-            this.UnknownsTab.ResumeLayout(false);
-            this.UnknownsTab.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -911,13 +884,11 @@ namespace MGPG
         private System.Windows.Forms.TextBox PasswordTextBox;
         private System.Windows.Forms.Button GenerateButton;
         private System.Windows.Forms.CheckBox AutogenButton;
-        private System.Windows.Forms.TabPage UnknownsTab;
-        private System.Windows.Forms.CheckBox word5letter1bit3;
-        private System.Windows.Forms.CheckBox unk_DrainHP;
-        private System.Windows.Forms.TextBox UnknownsDescription;
         private System.Windows.Forms.CheckBox word2letter1bit5;
         private System.Windows.Forms.CheckBox word2letter5bit1;
-        private System.Windows.Forms.ToolTip dummyRationToolTip;
+        private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.CheckBox unk_DrainHP;
+        private System.Windows.Forms.CheckBox word5letter1bit3;
     }
 }
 

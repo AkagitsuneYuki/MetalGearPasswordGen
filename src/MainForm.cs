@@ -17,12 +17,16 @@ namespace MGPG
         private void LoadMainForm(object sender, EventArgs e)
         {
             password = new Password();
+            //thinking of setting to true in the future
             autoGenerate = false;
             //set cigarettes to true
             EquipmentCheckListA.SetItemChecked(8, true);
             SetPasswordText();
         }
 
+        /// <summary>
+        /// Sets the text in the password box to a new generated password.
+        /// </summary>
         private void SetPasswordText()
         {
             PasswordTextBox.Text = password.GeneratePassword();
@@ -32,36 +36,24 @@ namespace MGPG
         private void Rank1ButtonClicked(object sender, EventArgs e)
         {
             password.SetRank(1);
-            if (autoGenerate)
-            {
-                SetPasswordText();
-            }
+            AutoGenerate();
         }
 
         private void Rank2ButtonClicked(object sender, EventArgs e)
         {
             password.SetRank(2);
-            if (autoGenerate)
-            {
-                SetPasswordText();
-            }
+            AutoGenerate();
         }
 
         private void Rank3ButtonClicked(object sender, EventArgs e)
         {
             password.SetRank(3);
-            if (autoGenerate)
-            {
-                SetPasswordText();
-            }
+            AutoGenerate();
         }
         private void Rank4ButtonClicked(object sender, EventArgs e)
         {
             password.SetRank(4);
-            if (autoGenerate)
-            {
-                SetPasswordText();
-            }
+            AutoGenerate();
         }
         #endregion
 
@@ -71,10 +63,7 @@ namespace MGPG
             RationsCounterBox.Enabled = RationsCheckBox.Checked;
             password.equipment.ration = RationsCheckBox.Checked;
             password.equipment.rations = RationsCheckBox.Checked ? (int)RationsCounterBox.Value : 0;
-            if (autoGenerate)
-            {
-                SetPasswordText();
-            }
+            AutoGenerate();
         }
 
         private void EquipmentCheckListA_ItemCheck(object sender, ItemCheckEventArgs e)
@@ -173,37 +162,32 @@ namespace MGPG
         private void RationsCounterBox_ValueChanged(object sender, EventArgs e)
         {
             password.equipment.rations = (int)RationsCounterBox.Value;
-            if (autoGenerate)
-            {
-                SetPasswordText();
-            }
+            AutoGenerate();
         }
 
         private void EquipmentCheckListA_SelectedIndexChanged(object sender, EventArgs e)
         {
             EquipmentCheckListA.ClearSelected();
-            if (autoGenerate)
-            {
-                SetPasswordText();
-            }
+            AutoGenerate();
         }
 
         private void EquipmentCheckListB_SelectedIndexChanged(object sender, EventArgs e)
         {
             EquipmentCheckListB.ClearSelected();
-            if (autoGenerate)
-            {
-                SetPasswordText();
-            }
+            AutoGenerate();
         }
 
         private void EquipmentCheckListC_SelectedIndexChanged(object sender, EventArgs e)
         {
             EquipmentCheckListC.ClearSelected();
-            if (autoGenerate)
-            {
-                SetPasswordText();
-            }
+            AutoGenerate();
+        }
+
+        //Dummy Rations
+        private void word2letter5bit1_CheckedChanged(object sender, EventArgs e)
+        {
+            password.equipment.dummyRations = word2letter5bit1.Checked;
+            AutoGenerate();
         }
         #endregion
 
@@ -213,10 +197,7 @@ namespace MGPG
             password.SetWeaponObtained((int)Password.WeaponID.HandGun, HandGunBox.Checked);
             password.SetWeaponAmmoCount((int)Password.WeaponID.HandGun, HandGunBox.Checked ? (int)HandGunRoundsBox.Value : 0);
             HandGunRoundsBox.Enabled = HandGunBox.Checked;
-            if (autoGenerate)
-            {
-                SetPasswordText();
-            }
+            AutoGenerate();
         }
 
         private void MinesBox_CheckedChanged(object sender, EventArgs e)
@@ -224,10 +205,7 @@ namespace MGPG
             password.SetWeaponObtained((int)Password.WeaponID.Mines, MinesBox.Checked);
             password.SetWeaponAmmoCount((int)Password.WeaponID.Mines, MinesBox.Checked ? (int)MinesCountBox.Value : 0);
             MinesCountBox.Enabled = MinesBox.Checked;
-            if (autoGenerate)
-            {
-                SetPasswordText();
-            }
+            AutoGenerate();
         }
 
         private void ExplosivesBox_CheckedChanged(object sender, EventArgs e)
@@ -235,10 +213,7 @@ namespace MGPG
             password.SetWeaponObtained((int)Password.WeaponID.Explosives, ExplosivesBox.Checked);
             password.SetWeaponAmmoCount((int)Password.WeaponID.Explosives, ExplosivesBox.Checked ? (int)ExplosivesCountBox.Value : 0);
             ExplosivesCountBox.Enabled = ExplosivesBox.Checked;
-            if (autoGenerate)
-            {
-                SetPasswordText();
-            }
+            AutoGenerate();
         }
 
         private void MissilesBox_CheckedChanged(object sender, EventArgs e)
@@ -246,10 +221,7 @@ namespace MGPG
             password.SetWeaponObtained((int)Password.WeaponID.Missiles, MissilesBox.Checked);
             password.SetWeaponAmmoCount((int)Password.WeaponID.Missiles, MissilesBox.Checked ? (int)MissilesCountBox.Value : 0);
             MissilesCountBox.Enabled = MissilesBox.Checked;
-            if (autoGenerate)
-            {
-                SetPasswordText();
-            }
+            AutoGenerate();
         }
 
         private void MachineGunBox_CheckedChanged(object sender, EventArgs e)
@@ -257,10 +229,7 @@ namespace MGPG
             password.SetWeaponObtained((int)Password.WeaponID.MachineGun, MachineGunBox.Checked);
             password.SetWeaponAmmoCount((int)Password.WeaponID.MachineGun, MachineGunBox.Checked ? (int)MachineGunCountBox.Value : 0);
             MachineGunCountBox.Enabled = MachineGunBox.Checked;
-            if (autoGenerate)
-            {
-                SetPasswordText();
-            }
+            AutoGenerate();
         }
 
         private void GrenadeBox_CheckedChanged(object sender, EventArgs e)
@@ -268,10 +237,7 @@ namespace MGPG
             password.SetWeaponObtained((int)Password.WeaponID.Grenades, GrenadeBox.Checked);
             password.SetWeaponAmmoCount((int)Password.WeaponID.Grenades, GrenadeBox.Checked ? (int)GrenadeCountBox.Value : 0);
             GrenadeCountBox.Enabled = GrenadeBox.Checked;
-            if (autoGenerate)
-            {
-                SetPasswordText();
-            }
+            AutoGenerate();
         }
 
         private void RocketBox_CheckedChanged(object sender, EventArgs e)
@@ -279,82 +245,55 @@ namespace MGPG
             password.SetWeaponObtained((int)Password.WeaponID.Rockets, RocketBox.Checked);
             password.SetWeaponAmmoCount((int)Password.WeaponID.Rockets, RocketBox.Checked ? (int)RocketCountBox.Value : 0);
             RocketCountBox.Enabled = RocketBox.Checked;
-            if (autoGenerate)
-            {
-                SetPasswordText();
-            }
+            AutoGenerate();
         }
 
         private void SilencerBox_CheckedChanged(object sender, EventArgs e)
         {
             password.SetWeaponObtained((int)Password.WeaponID.Silencer, SilencerBox.Checked);
-            if (autoGenerate)
-            {
-                SetPasswordText();
-            }
+            AutoGenerate();
         }
 
         private void HandGunRoundsBox_ValueChanged(object sender, EventArgs e)
         {
             password.SetWeaponAmmoCount((int)Password.WeaponID.HandGun, (int)HandGunRoundsBox.Value);
-            if (autoGenerate)
-            {
-                SetPasswordText();
-            }
+            AutoGenerate();
         }
 
         private void MinesCountBox_ValueChanged(object sender, EventArgs e)
         {
             password.SetWeaponAmmoCount((int)Password.WeaponID.Mines, (int)MinesCountBox.Value);
-            if (autoGenerate)
-            {
-                SetPasswordText();
-            }
+            AutoGenerate();
         }
 
         private void ExplosivesCountBox_ValueChanged(object sender, EventArgs e)
         {
             password.SetWeaponAmmoCount((int)Password.WeaponID.Explosives, (int)ExplosivesCountBox.Value);
-            if (autoGenerate)
-            {
-                SetPasswordText();
-            }
+            AutoGenerate();
         }
 
         private void MissilesCountBox_ValueChanged(object sender, EventArgs e)
         {
             password.SetWeaponAmmoCount((int)Password.WeaponID.Missiles, (int)MissilesCountBox.Value);
-            if (autoGenerate)
-            {
-                SetPasswordText();
-            }
+            AutoGenerate();
         }
 
         private void MachineGunCountBox_ValueChanged(object sender, EventArgs e)
         {
             password.SetWeaponAmmoCount((int)Password.WeaponID.MachineGun, (int)MachineGunCountBox.Value);
-            if (autoGenerate)
-            {
-                SetPasswordText();
-            }
+            AutoGenerate();
         }
 
         private void GrenadeCountBox_ValueChanged(object sender, EventArgs e)
         {
             password.SetWeaponAmmoCount((int)Password.WeaponID.Grenades, (int)GrenadeCountBox.Value);
-            if (autoGenerate)
-            {
-                SetPasswordText();
-            }
+            AutoGenerate();
         }
 
         private void RocketCountBox_ValueChanged(object sender, EventArgs e)
         {
             password.SetWeaponAmmoCount((int)Password.WeaponID.Rockets, (int)RocketCountBox.Value);
-            if (autoGenerate)
-            {
-                SetPasswordText();
-            }
+            AutoGenerate();
         }
         #endregion
 
@@ -362,78 +301,53 @@ namespace MGPG
         private void PrisonerCheckList_SelectedIndexChanged(object sender, EventArgs e)
         {
             PrisonerCheckList.ClearSelected();
-            if (autoGenerate)
-            {
-                SetPasswordText();
-            }
+            AutoGenerate();
         }
 
         private void PrisonerCheckList_ItemCheck(object sender, ItemCheckEventArgs e)
         {
             password.prisoners[PrisonerCheckList.SelectedIndex] = e.NewValue == CheckState.Checked;
         }
+
+        //Fake Pettrovich
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            password.fakePettrovich = word2letter1bit5.Checked;
+            AutoGenerate();
+        }
+
+        //Unknown Prisoner
+        private void word5letter1bit3_CheckedChanged(object sender, EventArgs e)
+        {
+            password.unknownPrisoner = word5letter1bit3.Checked;
+            AutoGenerate();
+        }
         #endregion
 
         #region Bosses
-
         private void BossCheckList_SelectedIndexChanged(object sender, EventArgs e)
         {
             BossCheckList.ClearSelected();
-            if (autoGenerate)
-            {
-                SetPasswordText();
-            }
+            AutoGenerate();
         }
 
         private void BossCheckList_ItemCheck(object sender, ItemCheckEventArgs e)
         {
             password.bosses[BossCheckList.SelectedIndex] = e.NewValue == CheckState.Checked;
         }
-
         #endregion
 
         #region Events
         private void CapturedCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             password.events.captured = CapturedCheckBox.Checked;
-            if (autoGenerate)
-            {
-                SetPasswordText();
-            }
+            AutoGenerate();
         }
 
         private void RecoverGearCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             password.events.recovered = RecoverGearCheckBox.Checked;
-            if (autoGenerate)
-            {
-                SetPasswordText();
-            }
-        }
-        #endregion
-
-        #region Unknowns
-
-        //Fake Pettrovich
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            //password.unknowns.word2letter1bit5 = word2letter1bit5.Checked;
-            password.fakePettrovich = word2letter1bit5.Checked;
-            if (autoGenerate)
-            {
-                SetPasswordText();
-            }
-        }
-
-        //Dummy Rations
-        private void word2letter5bit1_CheckedChanged(object sender, EventArgs e)
-        {
-            //password.unknowns.word2letter5bit1 = word2letter5bit1.Checked;
-            password.equipment.dummyRations = word2letter5bit1.Checked;
-            if (autoGenerate)
-            {
-                SetPasswordText();
-            }
+            AutoGenerate();
         }
 
         //Poisoned
@@ -441,25 +355,11 @@ namespace MGPG
         {
             //password.unknowns.unk_DrainHP = unk_DrainHP.Checked;
             password.events.poisoned = unk_DrainHP.Checked;
-            if (autoGenerate)
-            {
-                SetPasswordText();
-            }
+            AutoGenerate();
         }
-
-        //Unknown Prisoner
-        private void word5letter1bit3_CheckedChanged(object sender, EventArgs e)
-        {
-            //password.unknowns.word5letter1bit3 = word5letter1bit3.Checked;
-            password.unknownPrisoner = word5letter1bit3.Checked;
-            if (autoGenerate)
-            {
-                SetPasswordText();
-            }
-        }
-
         #endregion
 
+        #region Generation
         private void GenerateButton_Click(object sender, EventArgs e)
         {
             SetPasswordText();
@@ -469,11 +369,19 @@ namespace MGPG
         {
             autoGenerate = AutogenButton.Checked;
             GenerateButton.Enabled = !autoGenerate;
+            AutoGenerate();
+        }
+
+        /// <summary>
+        /// Generates a new password if the autoGenerate variable is true.
+        /// </summary>
+        private void AutoGenerate()
+        {
             if (autoGenerate)
             {
                 SetPasswordText();
             }
         }
-
+        #endregion
     }
 }

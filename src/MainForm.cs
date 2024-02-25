@@ -353,7 +353,6 @@ namespace MGPG
         //Poisoned
         private void unk_DrainHP_CheckedChanged(object sender, EventArgs e)
         {
-            //password.unknowns.unk_DrainHP = unk_DrainHP.Checked;
             password.events.poisoned = unk_DrainHP.Checked;
             AutoGenerate();
         }

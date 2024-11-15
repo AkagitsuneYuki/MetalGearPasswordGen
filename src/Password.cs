@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace MGPG
 {
@@ -263,8 +264,6 @@ namespace MGPG
         /// <returns>A valid password.</returns>
         public string GeneratePassword()
         {
-            string output = "";
-
             int[] table = new int[24];
             int word = 0;
 
@@ -389,20 +388,23 @@ namespace MGPG
             table[word * 5 + 3] += equipment.card7 == true ? 2 : 0;
             table[word * 5 + 3] += equipment.card6 == true ? 1 : 0;
 
+            //use a string builder to improve performance
+            StringBuilder stringBuilder = new();
+
             //converts the table to the proper digits
             for (int letter = 0; letter < table.Length; letter++)
             {
                 //add spaces after every 5th letter
                 if (letter > 0 && letter % 5 == 0)
                 {
-                    output += " ";
+                    stringBuilder.Append(" ");
                 }
-                output += BitsToDigit(table[letter]);
+                stringBuilder.Append(BitsToDigit(table[letter]));
             }
             //add the checksum digit
-            output += BitsToDigit(AccurateChecksum(table));
+            stringBuilder.Append(BitsToDigit(AccurateChecksum(table)));
 
-            return output;
+            return stringBuilder.ToString();
         }
 
         /// <summary>

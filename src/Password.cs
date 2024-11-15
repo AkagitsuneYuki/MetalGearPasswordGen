@@ -156,78 +156,15 @@ namespace MGPG
         /// <exception cref="ArgumentOutOfRangeException">If the number isn't within the valid range</exception>
         public char BitsToDigit(int num)
         {
-            //it's probably better to use an enum for this, but I couldn't figure out how to get it working with the right names
-            switch (num)
-            {
-                //if the number isn't in the list, throw an exception
-                default:
-                    throw new ArgumentOutOfRangeException("Invalid number! Must be between 0 and 31, inclusive");
-                //the actual numbers we need
-                case 0:
-                    return '1';
-                case 1:
-                    return '2';
-                case 2:
-                    return '3';
-                case 3:
-                    return '4';
-                case 4:
-                    return '5';
-                case 5:
-                    return '6';
-                case 6:
-                    return 'A';
-                case 7:
-                    return 'B';
-                case 8:
-                    return 'C';
-                case 9:
-                    return 'D';
-                case 10:
-                    return 'E';
-                case 11:
-                    return 'F';
-                case 12:
-                    return 'G';
-                case 13:
-                    return 'H';
-                case 14:
-                    return 'I';
-                case 15:
-                    return 'J';
-                case 16:
-                    return 'K';
-                case 17:
-                    return 'L';
-                case 18:
-                    return 'M';
-                case 19:
-                    return 'N';
-                case 20:
-                    return 'O';
-                case 21:
-                    return 'P';
-                case 22:
-                    return 'Q';
-                case 23:
-                    return 'R';
-                case 24:
-                    return 'S';
-                case 25:
-                    return 'T';
-                case 26:
-                    return 'U';
-                case 27:
-                    return 'V';
-                case 28:
-                    return 'W';
-                case 29:
-                    return 'X';
-                case 30:
-                    return 'Y';
-                case 31:
-                    return 'Z';
-            }
+            char[] chars = {'1', '2', '3', '4', '5',
+                            '6', 'A', 'B', 'C', 'D',
+                            'E', 'F', 'G', 'H', 'I',
+                            'J', 'K', 'L', 'M', 'N',
+                            'O', 'P', 'Q', 'R', 'S',
+                            'T', 'U', 'V', 'W', 'X',
+                            'Y', 'Z'};
+
+            return chars[num];
         }
 
         /// <summary>
